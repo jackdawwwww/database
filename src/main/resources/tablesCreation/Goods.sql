@@ -1,0 +1,4 @@
+CREATE TABLE Goods (
+good_id NUMBER(11) PRIMARY KEY,
+name VARCHAR(30) NOT NULL
+)

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane fx:controller="controller.MainController"
+        dividerPositions="0.3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+           minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.281"
+           xmlns:fx="http://javafx.com/fxml/1">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <ListView fx:id="tableListView" layoutX="9.0" layoutY="6.0" prefHeight="555.0" prefWidth="159.0" AnchorPane.topAnchor="0"/>
+            </children>
+
+            <children>
+                <Button fx:id="createDB" contentDisplay="CENTER" mnemonicParsing="false" onAction="#createButtonTapped"
+                        prefHeight="25.0" prefWidth="230.0" text="Create database" AnchorPane.bottomAnchor="0"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="450.0"/>
+    </items>
+</SplitPane>

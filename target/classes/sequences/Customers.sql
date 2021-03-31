@@ -1,0 +1,5 @@
+CREATE TABLE Customers (
+id NUMBER(11) PRIMARY KEY,
+name VARCHAR(30) NOT NULL,
+age NUMBER(3)
+)
