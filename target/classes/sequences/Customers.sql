@@ -1,5 +1,1 @@
-CREATE TABLE Customers (
-id NUMBER(11) PRIMARY KEY,
-name VARCHAR(30) NOT NULL,
-age NUMBER(3)
-)
+DECLARE  v_dummy NUMBER;BEGIN  SELECT 1  INTO v_dummy  FROM user_sequences  WHERE sequence_name LIKE 'SQ_Customers';EXCEPTION  WHEN no_data_found THEN    EXECUTE IMMEDIATE 'create sequence SQ_Customers START WITH 1 INCREMENT BY 1 NOMAXVALUE';END;

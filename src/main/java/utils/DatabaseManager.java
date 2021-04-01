@@ -8,15 +8,14 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
 
 public class DatabaseManager {
-    private static final String[] tableNamesArray = {"TradeTypes.sql", "Goods.sql", "TradePoints.sql"}; //, "Seller.sql", "Sales.sql",
-           // "Providers.sql", "Accounting.sql", "Customers.sql", "Deliveries.sql", "Deliveries_goods", "Purchase_compositions.sql",
-           // "TradeRoom.sql", "TradeSectionPoints.sql"};
+    private static final String[] tableNamesArray = {"TradeTypes.sql", "Goods.sql", "TradePoints.sql"};
+//            "TradeRoom.sql", "Seller.sql", "Purchase_compositions.sql", "Customers.sql", "Sales.sql",
+//            "Providers.sql", "Accounting.sql","Deliveries.sql", "DeliveriesGoods.sql","TradeSectionPoint.sql"};
 
-    private Connection connection;
-    private List<String> tablesName;
+    private final Connection connection;
+    private final List<String> tablesName;
 
     public DatabaseManager(Connection connection) {
         this.connection = connection;
@@ -24,36 +23,32 @@ public class DatabaseManager {
         tablesName.addAll(Arrays.asList(tableNamesArray));
     }
 
-    public void createDatabase() throws SQLException {
+    public void createDatabase() {
         createTables();
     }
 
-    private void execute(List<String> queries, Optional<Integer> additionalCode) throws SQLException {
+    private void execute(List<String> queries) {
         for (String query: queries) {
             try {
                 connection.executeQuery(query);
             } catch (SQLIntegrityConstraintViolationException ignored) {
             } catch (SQLException e) {
-                if (!(e.getErrorCode() == 6550 || e.getErrorCode() == additionalCode.get())) {
-                    e.printStackTrace();
-                }
-            } finally {
-                System.out.println("Execute query: " + query.toString());
+                e.printStackTrace();
             }
         }
     }
 
-    private void createTables() throws SQLException {
+    private void createTables() {
         List<String> tablesCreation = new LinkedList<>();
         for(String tableName: tablesName) {
             tablesCreation.add(getScriptFromFile("tablesCreation/" + tableName));
         }
 
-        execute(getTableDrops(), null);
-        execute(getSequencesDrops(), null);
-        execute(tablesCreation, Optional.of(955));
-        execute(getSequences(), null);
-        execute(getAutoincrement(), null);
+        execute(getTableDrops());
+        execute(getSequencesDrops());
+        execute(tablesCreation);
+        execute(getSequences());
+        execute(getAutoincrement());
     }
 
     private String getScriptFromFile(String relativePath) {
