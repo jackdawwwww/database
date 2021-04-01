@@ -5,9 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class DatabaseManager {
     private static final String[] tableNamesArray = {"TradeTypes.sql", "Goods.sql", "TradePoints.sql"};
@@ -25,6 +23,29 @@ public class DatabaseManager {
 
     public void createDatabase() {
         createTables();
+    }
+
+    public void insertTradeType(String name) {
+        List<String> tradeType = new LinkedList<>();
+        tradeType.add("INSERT INTO TradeTypes(name) VALUES('" + name + ")");
+        connection.insert(tradeType);
+        System.out.println("INSERT trade type");
+    }
+
+    public void insertGood(String name) {
+        List<String> good = new LinkedList<>();
+        good.add("INSERT INTO Goods(name) VALUES('" + name + ")");
+        connection.insert(good);
+        System.out.println("INSERT good");
+    }
+
+    public void insertTradePoint(int typeId, String name, int point_size, int rent_price, int communal_payments, int number_of_counters) {
+        List<String> tradePoint = new LinkedList<>();
+        tradePoint.add("INSERT INTO TradePoints(type, name, point_size, rent_price, " +
+                "communal_payments, number_of_counters) VALUES('" + typeId + "', " + name + ", "+ point_size + ", " +
+                rent_price + ", " + communal_payments + ", " + number_of_counters + ")");
+        connection.insert(tradePoint);
+        System.out.println("INSERT trade point");
     }
 
     private void execute(List<String> queries) {
@@ -49,6 +70,7 @@ public class DatabaseManager {
         execute(tablesCreation);
         execute(getSequences());
         execute(getAutoincrement());
+        insertDefault();
     }
 
     private String getScriptFromFile(String relativePath) {
@@ -91,5 +113,32 @@ public class DatabaseManager {
             autoIncrements.addFirst(getScriptFromFile("dropTables/" + tableName));
         }
         return autoIncrements;
+    }
+
+    private void insertDefault() {
+        for(String tableName: tablesName) {
+            List<String> list = getListOfScriptsFromFile("insertions/" + tableName);
+            if(!list.isEmpty()) {
+                execute(list);
+            }
+        }
+
+        System.out.println("Insert default");
+    }
+
+    private List<String> getListOfScriptsFromFile(String relativePath) {
+        try {
+            Scanner scanner = new Scanner(new String(Files.readAllBytes(Paths.get(
+                    "src/main/resources/" + relativePath))));
+            List<String> queries = new LinkedList<>();
+            while (scanner.hasNext()) {
+                String script = scanner.nextLine();
+                queries.add(script);
+            }
+            return queries;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

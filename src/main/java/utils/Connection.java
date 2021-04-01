@@ -82,59 +82,55 @@ public class Connection {
         }
     }
 
-//    public void insert(List<String> queryList) {
-//
-//        createConnection();
-//        for(String query : queryList) {
-//            try (PreparedStatement pstmt = connection.prepareStatement(query)) {
-//                pstmt.executeUpdate(query);
-////                ResultSet result = pstmt.executeQuery();
-//                System.out.println("INSERT");
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
+    public void insert(List<String> queryList) {
+        createConnection();
+        for(String query : queryList) {
+            try (PreparedStatement statement = connection.prepareStatement(query)) {
+                statement.executeUpdate(query);
+                System.out.println("INSERT");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-//    public List<List<String>> select(String sql){
-//        return select(sql, result -> {
-//            try {
-//                ArrayList<String> list = new ArrayList<>(1);
-//                list.add(result.getString(1));
-//                return list;
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//            return null;
-//        });
-//    }
+    public List<List<String>> select(String sql){
+        return select(sql, result -> {
+            try {
+                ArrayList<String> list = new ArrayList<>(1);
+                list.add(result.getString(1));
+                return list;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return null;
+        });
+    }
 
 
-//    public List<List<String>> select(String sql, Function<ResultSet, List<String>> toString){
-//        createConnection();
-//        List<List<String>> names = new LinkedList<>();
-//        try (Statement stmt = connection.createStatement()) {
-//            ResultSet result = stmt.executeQuery(sql);
-//            while (result.next()){
-//                names.add(toString.apply(result));
-//            }
-//        }
-//        catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return names;
-//    }
+    public List<List<String>> select(String sql, Function<ResultSet, List<String>> toString){
+        createConnection();
+        List<List<String>> names = new LinkedList<>();
+        try (Statement statement = connection.createStatement()) {
+            ResultSet result = statement.executeQuery(sql);
+            while (result.next()){
+                names.add(toString.apply(result));
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return names;
+    }
 
 //    public String createQuery(String template, String data){
 //        return template + data;
 //    }
-
-
+//
 //    public void delete(String query) {
 //        createConnection();
-//        try (PreparedStatement pstmt = connection.prepareStatement(query)) {
-//            pstmt.executeUpdate(query);
-//            //  ResultSet result = pstmt.executeQuery();
+//        try (PreparedStatement statement = connection.prepareStatement(query)) {
+//            statement.executeUpdate(query);
 //        } catch (SQLException e) {
 //            e.printStackTrace();
 //        }
