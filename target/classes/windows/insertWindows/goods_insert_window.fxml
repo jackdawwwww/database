@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.insert.GoodsInsertController">
+   <children>
+      <BorderPane layoutX="102.0" layoutY="32.0" prefHeight="237.0" prefWidth="246.0">
+         <center>
+            <TextField fx:id="nameField" prefHeight="54.0" prefWidth="246.0" promptText="Enter good's name" BorderPane.alignment="CENTER" />
+         </center>
+         <top>
+            <Label prefHeight="21.0" prefWidth="143.0" text="Insert new trade type" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <Button fx:id="insertButton" mnemonicParsing="false" onAction="#insertButtonTapped" text="Insert" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

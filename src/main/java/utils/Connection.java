@@ -87,7 +87,6 @@ public class Connection {
         for(String query : queryList) {
             try (PreparedStatement statement = connection.prepareStatement(query)) {
                 statement.executeUpdate(query);
-                System.out.println("INSERT");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -123,17 +122,13 @@ public class Connection {
         return names;
     }
 
-//    public String createQuery(String template, String data){
-//        return template + data;
-//    }
-//
-//    public void delete(String query) {
-//        createConnection();
-//        try (PreparedStatement statement = connection.prepareStatement(query)) {
-//            statement.executeUpdate(query);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    public void delete(String query) {
+        createConnection();
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

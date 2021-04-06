@@ -1,0 +1,6 @@
+INSERT INTO Trade_Room(trade_points_id) VALUES(1)
+INSERT INTO Trade_Room(trade_points_id) VALUES(1)
+INSERT INTO Trade_Room(trade_points_id) VALUES(2)
+INSERT INTO Trade_Room(trade_points_id) VALUES(3)
+INSERT INTO Trade_Room(trade_points_id) VALUES(3)
+INSERT INTO Trade_Room(trade_points_id) VALUES(3)

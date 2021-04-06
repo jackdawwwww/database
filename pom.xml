@@ -10,28 +10,18 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>13</version>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>13</version>
-        </dependency>
-        <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ojdbc6</artifactId>
             <version>11.2.0.4</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <version>3.3.0</version>
-            <type>maven-plugin</type>
-        </dependency>
 
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.4.5</version>
+        </dependency>
     </dependencies>
+
 
     <build>
         <plugins>
@@ -68,6 +58,7 @@
             </plugin>
         </plugins>
     </build>
+
 
 
     <properties>

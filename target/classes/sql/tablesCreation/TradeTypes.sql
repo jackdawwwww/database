@@ -1,0 +1,1 @@
+CREATE TABLE Trade_types (    id NUMBER(11) PRIMARY KEY,    name VARCHAR(30) NOT NULL)

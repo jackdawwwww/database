@@ -1,38 +1,38 @@
 package init;
 
-import controller.EntranceController;
+import controller.base.EntranceController;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import utils.Connection;
-import utils.Navigation;
+import java.io.IOException;
 
 public class Main extends Application {
-    private static Navigation navigation;
+    private static final Connection connection = new Connection();
 
     public static void main(String[] args) {
         launch(args);
     }
 
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage) throws IOException {
         stage.setTitle("Information system of trade organization");
+        Parent root = new FXMLLoader().load(getClass().getResourceAsStream(EntranceController.ENTRANCE_WINDOW_FXML));
 
-        navigation = new Navigation(stage);
-        Main.getNavigation().load(EntranceController.ENTRANCE_WINDOW_FXML).show();
-
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
         stage.show();
     }
 
     @Override
     public void stop() throws Exception {
-        Main.getNavigation().getConnection().close();
+        connection.close();
         super.stop();
     }
 
-    public static Navigation getNavigation() {
-        return navigation;
-    }
-
-    public static Connection getConnection() { return navigation.getConnection(); }
+    public static Connection getConnection() { return connection; }
 
 }
+
