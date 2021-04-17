@@ -17,12 +17,15 @@ import javafx.scene.control.cell.MapValueFactory;
 import javafx.stage.Stage;
 import utils.Connection;
 import utils.DatabaseManager;
+import utils.Tables;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -32,6 +35,8 @@ public class TableController implements Initializable {
     private final LinkedList<TableColumn<Map, String>> columns = new LinkedList<>();
     private final ObservableList<Map<String, Object>> items = FXCollections.<Map<String, Object>>observableArrayList();
     private final LinkedList<String> columnNames = new LinkedList<>();
+    private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.ENGLISH);
+    private final SimpleDateFormat formatter2 = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
 
     @FXML
     private TableView tableView;
@@ -93,7 +98,15 @@ public class TableController implements Initializable {
                 Map<String, Object> map = new HashMap<>();
 
                 for(int j = 1; j <= columnSize; j++) {
-                    map.put(columnNames.get(j-1), set.getString(j));
+                    String value = set.getString(j);
+
+                    try {
+                        Date date = formatter.parse(value);
+                        value = formatter2.format(date);
+                    } catch (ParseException ignore) {
+
+                    }
+                    map.put(columnNames.get(j-1), value);
                 }
                 items.add(map);
             }

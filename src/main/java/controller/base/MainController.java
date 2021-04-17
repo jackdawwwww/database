@@ -20,6 +20,8 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
     public final static String URL_FXML = "/windows/main_window.fxml";
+    public final static String SEL_FXML = "/windows/choice_window.fxml";
+
     private final Connection connection;
     private final DatabaseManager manager;
     public static final ObservableList data =
@@ -28,6 +30,19 @@ public class MainController implements Initializable {
     public MainController() {
         connection = Main.getConnection();
         manager = new DatabaseManager(connection);
+
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = null;
+        try {
+            root = loader.load(getClass().getResourceAsStream(SEL_FXML));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Stage stage = new Stage();
+        assert root != null;
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
     @FXML

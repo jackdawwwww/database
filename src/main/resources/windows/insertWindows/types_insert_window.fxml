@@ -13,7 +13,7 @@
             <TextField fx:id="nameField" prefHeight="54.0" prefWidth="246.0" promptText="Enter trade type name" BorderPane.alignment="CENTER" />
          </center>
          <top>
-            <Label prefHeight="21.0" prefWidth="143.0" text="Insert new trade type" BorderPane.alignment="CENTER" />
+            <Label fx:id="label" prefHeight="21.0" prefWidth="143.0" text="Insert new trade type" BorderPane.alignment="CENTER" />
          </top>
          <bottom>
             <Button fx:id="insertButton" mnemonicParsing="false" onAction="#insertButtonTapped" text="Insert" BorderPane.alignment="CENTER" />

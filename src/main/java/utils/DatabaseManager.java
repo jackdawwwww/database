@@ -9,9 +9,9 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class DatabaseManager {
-    private static final String[] tableNamesArray = {"TradeTypes.sql", "Goods.sql", "TradePoints.sql", "TradeRoom.sql"};
-    //"Seller.sql", "Purchase_compositions.sql", "Customers.sql", "Sales.sql",
-//            "Providers.sql", "Accounting.sql","Deliveries.sql", "DeliveriesGoods.sql","TradeSectionPoint.sql"};
+    private static final String[] tableNamesArray = {"TradeTypes.sql", "Goods.sql", "TradePoints.sql", "TradeRoom.sql",
+            "Seller.sql", "Purchase_compositions.sql", "Customers.sql", "Sales.sql", "Providers.sql", "Accounting.sql",
+            "Deliveries.sql", "DeliveriesGoods.sql","TradeSectionPoint.sql"};
 
     private final Connection connection;
     private final List<String> tablesName;
@@ -31,7 +31,7 @@ public class DatabaseManager {
         System.out.println("INSERT trade type");
     }
 
-    public void insertTradeRoom(int point) {
+    public void insertTradeRoom(String point) {
         List<String> tradeType = new LinkedList<>();
         tradeType.add("INSERT INTO Trade_Room(trade_points_id) VALUES(" + point + ")");
         connection.insert(tradeType);
@@ -45,7 +45,8 @@ public class DatabaseManager {
         System.out.println("INSERT good");
     }
 
-    public void insertTradePoint(String name, int typeId, int point_size, int rent_price, int communal_payments, int number_of_counters) {
+    public void insertTradePoint(String name, String typeId, String point_size, String rent_price,
+                                 String communal_payments, String number_of_counters) {
         List<String> tradePoint = new LinkedList<>();
         tradePoint.add("INSERT INTO Trade_Points(type, name, point_size, rent_price, " +
                 "communal_payments, number_of_counters) VALUES(" + typeId + ", '" + name + "', "+ point_size + ", " +
@@ -55,18 +56,22 @@ public class DatabaseManager {
     }
 
     public static String getIdFrom(String item) {
-        String start = " ID=";
+        return getSubstring(" ID=", "ID=", item);
+    }
+
+    public static String getSubstring(String start1, String start2, String item) {
+        String start = start1;
         int substringStartIndex = item.indexOf(start);
         if(substringStartIndex < 0) {
-            start = "ID=";
+            start = start2;
             substringStartIndex = item.indexOf(start);
         }
         int endIndex = item.indexOf(',', substringStartIndex);
         if(endIndex < 0) {
             endIndex = item.indexOf('}', substringStartIndex);
         }
-        String id = item.substring(substringStartIndex + start.length(), endIndex);
-        return id;
+
+        return item.substring(substringStartIndex + start.length(), endIndex);
     }
 
     public void updateGood(String id, String name) {
@@ -93,11 +98,11 @@ public class DatabaseManager {
         System.out.println("UPDATE trade room");
     }
 
-    public void updateTradeRoom(String id, String name, String typeId, String point_size,
+    public void updateTradePoint(String id, String typeId, String name, String point_size,
                                 String rent_price, String communal_payments, String number_of_counters) {
-        String sql = "update Trade_Points set type = " + typeId + " name = '" + name + "' point_size = " +
-                point_size + " rent_price = " + rent_price + " communal_payments = " + communal_payments +
-                " number_of_counters = " + number_of_counters + " where id = " + id;
+        String sql = "update Trade_Points set type = " + typeId + ", name = '" + name + "', point_size = " +
+                point_size + ", rent_price = " + rent_price + ", communal_payments = " + communal_payments +
+                ", number_of_counters = " + number_of_counters + " where id = " + id;
         List<String> point = new LinkedList<>();
         point.add(sql);
         connection.insert(point);

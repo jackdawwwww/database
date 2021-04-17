@@ -10,10 +10,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
 import utils.Connection;
 import utils.DatabaseManager;
 
@@ -67,7 +65,11 @@ public class RoomInsertController implements InsertController, Initializable {
     public void setItem(String item) {
         this.item = item;
         insertButton.setText("Update");
+
+        String tradePointId = DatabaseManager.getSubstring(" TRADE_POINTS_ID=", "TRADE_POINTS_ID=", item);
+        pointChoose.setValue(items.get(Integer.parseInt(tradePointId)-1));
     }
+
 
     @FXML
     private ChoiceBox pointChoose;
@@ -81,10 +83,19 @@ public class RoomInsertController implements InsertController, Initializable {
             showAlert("Empty field!", "Fill in required fields");
         } else {
             name = new SimpleStringProperty(pointChoose.getValue().toString());
-            int point = tradeTypes.get(pointChoose.getValue().toString());
-            manager.insertTradeRoom(point);
+            String point = tradeTypes.get(pointChoose.getValue().toString()).toString();
+
+            if (insertMode == InsertMode.insert) {
+                manager.insertTradeRoom(point);
+            } else {
+                String id = DatabaseManager.getIdFrom(item);
+                manager.updateTradeRoom(id, point);
+            }
             listener.changed(name, "", name);
+            Stage stage = (Stage) insertButton.getScene().getWindow();
+            stage.close();
         }
     }
+
 
 }

@@ -11,8 +11,10 @@ import javafx.fxml.FXML;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ChoiceBox;
+import javafx.stage.Stage;
 import utils.DatabaseManager;
 
 import java.net.URL;
@@ -41,13 +43,9 @@ public class PointsInsertController implements InsertController, Initializable {
         TextField[] fields = { pointSize, rentPrice, communalPayments, countersNum };
 
         for(TextField field: fields) {
-            field.textProperty().addListener(new ChangeListener<String>() {
-                @Override
-                public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                    String newValue) {
-                    if (!newValue.matches("\\d*")) {
-                        field.setText(newValue.replaceAll("[^\\d]", ""));
-                    }
+            field.textProperty().addListener((observable, oldValue, newValue) -> {
+                if (!newValue.matches("\\d*")) {
+                    field.setText(newValue.replaceAll("[^\\d]", ""));
                 }
             });
         }
@@ -78,6 +76,20 @@ public class PointsInsertController implements InsertController, Initializable {
     public void setItem(String item) {
         this.item = item;
         insertButton.setText("Update");
+
+        String type = DatabaseManager.getSubstring(" TYPE=", "TYPE=", item);
+        String name = DatabaseManager.getSubstring(" NAME=", "NAME=", item);
+        String size = DatabaseManager.getSubstring(" POINT_SIZE=", "POINT_SIZE=", item);
+        String price = DatabaseManager.getSubstring(" RENT_PRICE=", "RENT_PRICE=", item);
+        String payments = DatabaseManager.getSubstring(" COMMUNAL_PAYMENTS=", "COMMUNAL_PAYMENTS=", item);
+        String counters = DatabaseManager.getSubstring(" COUNTERS_NUM=", "COUNTERS_NUM=", item);
+
+        typeChoice.setValue(items.get(Integer.parseInt(type)-1));
+        nameField.setText(name);
+        pointSize.setText(size);
+        rentPrice.setText(price);
+        communalPayments.setText(payments);
+        countersNum.setText(counters);
     }
 
     @FXML
@@ -107,19 +119,21 @@ public class PointsInsertController implements InsertController, Initializable {
             showAlert("Fields: 'name', 'trade type' and 'point size' are required!","Fill in required fields");
         } else {
             name = new SimpleStringProperty(nameField.getText());
-            int type = tradeTypes.get(typeChoice.getValue().toString());
-            int size = Integer.parseInt(pointSize.getText());
-            int rent = rentPrice.getText().isEmpty() ? 0 : Integer.parseInt(rentPrice.getText());
-            int communal = communalPayments.getText().isEmpty() ? 0 : Integer.parseInt(communalPayments.getText());
-            int counters = countersNum.getText().isEmpty() ? 0 : Integer.parseInt(countersNum.getText());
-
-            manager.insertTradePoint(nameField.getText(), type, size, rent, communal, counters);
-
-            TextField[] fields = { nameField, pointSize, rentPrice, communalPayments, countersNum };
-            for(TextField field: fields) {
-                field.setText("");
+            String type = tradeTypes.get(typeChoice.getValue().toString()).toString();
+            String size = pointSize.getText();
+            String rent = rentPrice.getText().isEmpty() ? "null" : rentPrice.getText();
+            String communal = communalPayments.getText().isEmpty() ? "null" : communalPayments.getText();
+            String counters = countersNum.getText().isEmpty() ? "null" : countersNum.getText();
+            if (insertMode == InsertMode.insert) {
+                manager.insertTradePoint(nameField.getText(), type, size, rent, communal, counters);
+            } else {
+                String id = DatabaseManager.getIdFrom(item);
+                manager.updateTradePoint(id, type, nameField.getText(), size, rent, communal, counters);
             }
+
             listener.changed(name, "", name);
+            Stage stage = (Stage) insertButton.getScene().getWindow();
+            stage.close();
         }
     }
 

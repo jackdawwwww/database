@@ -7,6 +7,7 @@ import javafx.beans.value.ObservableStringValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import utils.DatabaseManager;
@@ -39,18 +40,9 @@ public class GoodsInsertController implements InsertController, Initializable {
     public void setItem(String item) {
         this.item = item;
         insertButton.setText("Update");
+        label.setText("Update");
 
-        String start = " NAME=";
-        int substringStartIndex = item.indexOf(start);
-        if(substringStartIndex < 0) {
-            start = "NAME=";
-            substringStartIndex = item.indexOf(start);
-        }
-        int endIndex = item.indexOf(',', substringStartIndex);
-        if(endIndex < 0) {
-            endIndex = item.indexOf('}', substringStartIndex);
-        }
-        String name = item.substring(substringStartIndex + start.length(), endIndex);
+        String name = DatabaseManager.getSubstring(" NAME=", "NAME=", item);
         nameField.setText(name);
     }
 
@@ -59,6 +51,9 @@ public class GoodsInsertController implements InsertController, Initializable {
 
     @FXML
     private TextField nameField;
+
+    @FXML
+    private Label label;
 
     @FXML
     private void insertButtonTapped() {

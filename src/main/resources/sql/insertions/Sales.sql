@@ -1,0 +1,6 @@
+INSERT INTO Sales(seller, customer, good, goods_count, result_price) VALUES(1, 2, 8, 1, 100)
+INSERT INTO Sales(seller, customer, good, goods_count, result_price) VALUES(2, 1, 7, 2, 300)
+INSERT INTO Sales(seller, customer, good, goods_count, result_price) VALUES(3, 3, 6, 3, 400)
+INSERT INTO Sales(seller, customer, good, goods_count, result_price) VALUES(4, 5, 5, 1, 200)
+INSERT INTO Sales(seller, customer, good, goods_count, result_price) VALUES(5, 1, 4, 2, 300)
+INSERT INTO Sales(seller, customer, good, goods_count, result_price) VALUES(6, 4, 3, 3, 500)
