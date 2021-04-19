@@ -1,0 +1,5 @@
+INSERT INTO Customers(name,age) VALUES('Tatyana', 26)
+INSERT INTO Customers(name,age) VALUES('Anna', 36)
+INSERT INTO Customers(name,age) VALUES('Alla', 46)
+INSERT INTO Customers(name,age) VALUES('Egor', 29)
+INSERT INTO Customers(name,age) VALUES('Alex', 32)

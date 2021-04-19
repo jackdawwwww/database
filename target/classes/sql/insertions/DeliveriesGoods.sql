@@ -1,0 +1,6 @@
+INSERT INTO Deliveries_goods(provider_id, good_id, delivery_id, price) VALUES(1, 9, 1, 10000)
+INSERT INTO Deliveries_goods(provider_id, good_id, delivery_id, price) VALUES(2, 8, 2, 20000)
+INSERT INTO Deliveries_goods(provider_id, good_id, delivery_id, price) VALUES(3, 7, 3, 30000)
+INSERT INTO Deliveries_goods(provider_id, good_id, delivery_id, price) VALUES(4, 6, 4, 40000)
+INSERT INTO Deliveries_goods(provider_id, good_id, delivery_id, price) VALUES(4, 5, 5, 50000)
+INSERT INTO Deliveries_goods(provider_id, good_id, delivery_id, price) VALUES(3, 4, 6, 60000)

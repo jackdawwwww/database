@@ -8,8 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.MapValueFactory;
-import utils.Connection;
-import utils.Selections;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -51,11 +49,10 @@ public class SelectTableController implements Initializable {
     public void loadData() throws SQLException {
         items.clear();
         columns.clear();
-
         ResultSetMetaData metaData = set.getMetaData();
         int columnSize = set.getMetaData().getColumnCount();
         try {
-            for(int i = 1; i <= columnSize; i++) {
+            for (int i = 1; i <= columnSize; i++) {
                 String columnName = metaData.getColumnName(i);
                 TableColumn<Map, String> column = new TableColumn<>(columnName);
                 column.setCellValueFactory(new MapValueFactory<>(columnName));
@@ -65,10 +62,10 @@ public class SelectTableController implements Initializable {
             }
 
             tableView.getColumns().setAll(columns);
-            for(int i = 1; set.next(); ++i) {
+            for (int i = 1; set.next(); ++i) {
                 Map<String, Object> map = new HashMap<>();
 
-                for(int j = 1; j <= columnSize; j++) {
+                for (int j = 1; j <= columnSize; j++) {
                     String value = set.getString(j);
 
                     try {
@@ -77,7 +74,7 @@ public class SelectTableController implements Initializable {
                     } catch (ParseException ignore) {
 
                     }
-                    map.put(columnNames.get(j-1), value);
+                    map.put(columnNames.get(j - 1), value);
                 }
                 items.add(map);
             }

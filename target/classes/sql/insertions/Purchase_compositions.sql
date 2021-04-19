@@ -1,0 +1,6 @@
+INSERT INTO Purchase_compositions(good, goods_count, result_price) VALUES(1, 1, 1000)
+INSERT INTO Purchase_compositions(good, goods_count, result_price) VALUES(2, 2, 3000)
+INSERT INTO Purchase_compositions(good, goods_count, result_price) VALUES(3, 3, 4000)
+INSERT INTO Purchase_compositions(good, goods_count, result_price) VALUES(4, 1, 2000)
+INSERT INTO Purchase_compositions(good, goods_count, result_price) VALUES(5, 2, 3000)
+INSERT INTO Purchase_compositions(good, goods_count, result_price) VALUES(6, 3, 5000)

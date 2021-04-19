@@ -1,0 +1,5 @@
+INSERT INTO Providers(name) VALUES('Belyi zamok')
+INSERT INTO Providers(name) VALUES('Teremok')
+INSERT INTO Providers(name) VALUES('Snegovichok')
+INSERT INTO Providers(name) VALUES('Lenta')
+INSERT INTO Providers(name) VALUES('Metro')

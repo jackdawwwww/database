@@ -1,0 +1,6 @@
+INSERT INTO Sellers(name, salary, trade_point, trade_room) VALUES('Tatyana', 18000, 1, 1)
+INSERT INTO Sellers(name, salary, trade_point, trade_room) VALUES('Maria', 21000, 2, 3)
+INSERT INTO Sellers(name, salary, trade_point, trade_room) VALUES('Anastasia', 31000, 3, 4)
+INSERT INTO Sellers(name, salary, trade_point, trade_room) VALUES('Kristina', 10000, 1, 2)
+INSERT INTO Sellers(name, salary, trade_point, trade_room) VALUES('Roman', 22000, 2, 3)
+INSERT INTO Sellers(name, salary, trade_point, trade_room) VALUES('Pavel', 10000, 3, 5)

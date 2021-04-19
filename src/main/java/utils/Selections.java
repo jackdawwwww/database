@@ -13,14 +13,14 @@ public enum Selections {
     // 3. Получить номенклатуру и объем товаров в указанной торговой точке.
     nomenclature(new Select(
             "Get the nomenclature and volume of goods at the specified outlet",
-            "")),
+            "/windows/select/nomenclature_sel_window.fxml")),
 
     // 5. Получить данные о выработке на одного продавца за указанный период по всем торговым точкам, по торговым точкам заданного типа.
     //(если учитываем определенный тип)
     sellers(new Select("" +
             "Get data on the output per one seller for a specified period for all outlets, \n" +
             "for outlets of a given type",
-            ""));
+            "/windows/select/sellers_sel_window.fxml"));
 
     private final Select select;
 

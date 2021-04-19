@@ -1,1 +1,1 @@
-CREATE TABLE Sales (id NUMBER(11) PRIMARY KEY, seller REFERENCES Sellers(id), customer REFERENCES Customers(id), good NUMBER(11) REFERENCES Goods(id) NOT NULL, goods_count NUMBER(11) NOT NULL, result_price NUMBER(11))
+CREATE TABLE Sales (id NUMBER(11) PRIMARY KEY, seller REFERENCES Sellers(id), customer REFERENCES Customers(id), good NUMBER(11) REFERENCES Goods(id) NOT NULL, goods_count NUMBER(11) NOT NULL, result_price NUMBER(11), sel_date DATE NOT NULL)

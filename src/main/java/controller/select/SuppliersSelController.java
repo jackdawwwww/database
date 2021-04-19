@@ -1,15 +1,11 @@
 package controller.select;
 
 import controller.base.SelectTableController;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableStringValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -23,7 +19,6 @@ import utils.DatabaseManager;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -40,14 +35,14 @@ public class SuppliersSelController implements SelectController, Initializable {
 
     private DatabaseManager manager;
 
-    private ObservableStringValue name = new SimpleStringProperty("");
     private ObservableList<String> items = FXCollections.<String>observableArrayList();
-    private final SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+    private final SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH);
     private Map<String, Integer> goods;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         manager = new DatabaseManager(connection);
+        choiceBox.setItems(items);
         numberField.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
                 numberField.setText(newValue.replaceAll("[^\\d]", ""));
@@ -80,10 +75,13 @@ public class SuppliersSelController implements SelectController, Initializable {
            });
         }
 
+
         try {
             ResultSet set = connection.executeQueryAndGetResult("select * from goods");
             goods = new HashMap<>();
             items.clear();
+            items.add("all");
+            goods.put("all", 0);
             if (set != null) {
                 while (set.next()) {
                     String name = set.getString(2);
@@ -98,47 +96,20 @@ public class SuppliersSelController implements SelectController, Initializable {
     }
 
     @FXML
-    private void listButtonTapped(ActionEvent event) throws IOException {
+    private void listButtonTapped() {
         String sql = "SELECT Providers.name FROM providers INNER JOIN Deliveries ON Deliveries.provider_id = Providers.id" + getParameters();;
-        try {
-            ResultSet set = connection.executeQueryAndGetResult(sql);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader();
-            Parent root = loader.load(getClass().getResourceAsStream(SelectTableController.fxml));
-
-            SelectTableController tableController = loader.getController();
-            tableController.set(set);
-            assert root != null;
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        showResult(sql);
     }
 
     @FXML
-    private void numButtonTapped(ActionEvent event) {
+    private void numButtonTapped() {
         String sql = "SELECT count(Providers.id)  FROM providers INNER JOIN Deliveries ON Deliveries.provider_id = Providers.id" + getParameters();
-        ResultSet set;
-        try {
-            set = connection.executeQueryAndGetResult(sql);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader();
-            Parent root = loader.load(getClass().getResourceAsStream(SelectTableController.fxml));
-
-            SelectTableController tableController = loader.getController();
-            tableController.set(set);
-            assert root != null;
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        showResult(sql);
     }
 
     private String getParameters() {
 
-        String good_id = !choiceBox.getSelectionModel().isEmpty() ? goods.get(choiceBox.getValue().toString()).toString() : "";
+        String good_id = !choiceBox.getSelectionModel().isEmpty() && !choiceBox.getValue().toString().equals("all") ? goods.get(choiceBox.getValue().toString()).toString() : "";
         String count = numberField.getText();
         String start = startPicker.getValue() != null ? startPicker.getValue().toString() : formatter.format(new Date(0L));
         String end = endPicker.getValue() != null ? endPicker.getValue().toString() : formatter.format(new Date(System.currentTimeMillis()));
