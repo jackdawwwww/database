@@ -19,7 +19,7 @@ import java.sql.*;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-    public final static String URL_FXML = "/windows/main_window.fxml";
+    public final static String FXML = "/windows/main_window.fxml";
     public final static String SEL_FXML = "/windows/choice_window.fxml";
 
     private final Connection connection;
