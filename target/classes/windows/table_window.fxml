@@ -8,10 +8,10 @@
 
 <AnchorPane fx:id="removeButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.base.TableController">
    <children>
-       <Button fx:id="insertButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#insertButtonTapped" prefHeight="31.0" prefWidth="151.0" text="Insert new item" AnchorPane.leftAnchor="14" AnchorPane.topAnchor="14" />
+       <Button fx:id="insertButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#insertButtonTapped" prefHeight="31.0" prefWidth="151.0" text="Добавить запись" AnchorPane.leftAnchor="14" AnchorPane.topAnchor="14" />
        <TableView fx:id="tableView" layoutX="14.0" layoutY="69.0" prefHeight="474.0" prefWidth="825.0">
     </TableView>
-      <Button layoutX="675.0" layoutY="14.0" mnemonicParsing="false" onAction="#removeButtonTapped" text="Remove selected row" />
-      <Button fx:id="updateButton" layoutX="349.0" layoutY="14.0" mnemonicParsing="false" text="Update selected row" onAction="#updateButtonTapped" />
+      <Button layoutX="626.0" layoutY="14.0" mnemonicParsing="false" onAction="#removeButtonTapped" text="Удалить выбранную запись" />
+      <Button fx:id="updateButton" layoutX="314.0" layoutY="14.0" mnemonicParsing="false" onAction="#updateButtonTapped" text="Изменить выбранную запись" />
    </children>
 </AnchorPane>

@@ -10,13 +10,13 @@
    <children>
       <BorderPane layoutX="102.0" layoutY="32.0" prefHeight="237.0" prefWidth="246.0">
          <center>
-            <TextField fx:id="nameField" prefHeight="54.0" prefWidth="246.0" promptText="Enter good's name" BorderPane.alignment="CENTER" />
+            <TextField fx:id="nameField" prefHeight="54.0" prefWidth="246.0" promptText="Введите название товара" BorderPane.alignment="CENTER" />
          </center>
          <top>
-            <Label fx:id="label" prefHeight="21.0" prefWidth="143.0" text="Insert new good" BorderPane.alignment="CENTER" />
+            <Label fx:id="label" prefHeight="21.0" prefWidth="170.0" text="Добавить новый товар" BorderPane.alignment="CENTER" />
          </top>
          <bottom>
-            <Button fx:id="insertButton" mnemonicParsing="false" onAction="#insertButtonTapped" text="Insert" BorderPane.alignment="CENTER" />
+            <Button fx:id="insertButton" mnemonicParsing="false" onAction="#insertButtonTapped" text="Добавить" BorderPane.alignment="CENTER" />
          </bottom>
       </BorderPane>
    </children>

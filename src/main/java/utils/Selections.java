@@ -1,25 +1,19 @@
 package utils;
 
 public enum Selections {
-    // 1. Получить перечень и общее число поставщиков, поставляющих указанный вид
-    //товара, либо некоторый товар в объеме, не менее заданного за весь период
-    //сотрудничества, либо за указанный период.
     suppliers(new Select(
-            "Get list and the total number of suppliers supplying the specified species goods,\n" +
-                    "or some goods in a volume not less than specified for the entire period cooperation,\n" +
-                    "or for a specified period",
+            "Получить перечень и общее число поставщиков, поставляющих указанный вид\n" +
+                    "товара, либо некоторый товар в объеме, не менее заданного за весь период\n" +
+                    "сотрудничества, либо за указанный период.",
             "/windows/select/supplies_sel_window.fxml")),
 
-    // 3. Получить номенклатуру и объем товаров в указанной торговой точке.
     nomenclature(new Select(
-            "Get the nomenclature and volume of goods at the specified outlet",
+            "Получить номенклатуру и объем товаров в указанной торговой точке.",
             "/windows/select/nomenclature_sel_window.fxml")),
 
-    // 5. Получить данные о выработке на одного продавца за указанный период по всем торговым точкам, по торговым точкам заданного типа.
-    //(если учитываем определенный тип)
     sellers(new Select("" +
-            "Get data on the output per one seller for a specified period for all outlets, \n" +
-            "for outlets of a given type",
+            "Получить данные о выработке на одного продавца за указанный период по всем\n" +
+            "торговым точкам, по торговым точкам заданного типа.",
             "/windows/select/sellers_sel_window.fxml"));
 
     private final Select select;

@@ -1,2 +1,4 @@
-package controller.roles;public class ControlMain {
+package controller.roles;
+
+public class ControlMain {
 }

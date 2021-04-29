@@ -64,7 +64,7 @@ public class RoomInsertController implements InsertController, Initializable {
 
     public void setItem(String item) {
         this.item = item;
-        insertButton.setText("Update");
+        insertButton.setText("Изменить");
 
         String tradePointId = DatabaseManager.getSubstring(" TRADE_POINTS_ID=", "TRADE_POINTS_ID=", item);
         pointChoose.setValue(items.get(Integer.parseInt(tradePointId)-1));

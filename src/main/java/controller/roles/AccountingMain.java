@@ -1,2 +1,4 @@
-package controller.roles;public class AccountingMain {
+package controller.roles;
+
+public class AccountingMain {
 }

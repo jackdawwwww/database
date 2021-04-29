@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.select.SellersSelController">
     <children>
-        <Button fx:id="listButton" layoutX="263.0" layoutY="266.0" mnemonicParsing="false" onAction="#getButtonTapped" text="Get data" />
-        <ChoiceBox fx:id="choiceBox" layoutX="226.0" layoutY="109.0" prefWidth="150.0" />
-        <Label layoutX="234.0" layoutY="62.0" text="You can select type" />
+        <Button fx:id="listButton" layoutX="229.0" layoutY="265.0" mnemonicParsing="false" onAction="#getButtonTapped" text="Получить данные" />
+        <ChoiceBox fx:id="choiceBox" layoutX="227.0" layoutY="105.0" prefWidth="150.0" />
+        <Label layoutX="163.0" layoutY="64.0" text="Вы можете выбрать тип торговой точки" />
         <DatePicker fx:id="startPicker" layoutX="94.0" layoutY="200.0" prefHeight="31.0" prefWidth="173.0" />
         <DatePicker fx:id="endPicker" layoutX="334.0" layoutY="200.0" prefHeight="31.0" prefWidth="173.0" />
-        <Label layoutX="103.0" layoutY="164.0" text="Period start date" />
-        <Label layoutX="368.0" layoutY="164.0" text="Period end date" />
+        <Label layoutX="124.0" layoutY="164.0" text="Начало периода" />
+        <Label layoutX="352.0" layoutY="164.0" text="Конец периода" />
     </children>
 </AnchorPane>

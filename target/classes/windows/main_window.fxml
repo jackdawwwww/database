@@ -8,6 +8,6 @@
     <ListView fx:id="tableListView" layoutX="9.0" layoutY="6.0" prefHeight="485.0" prefWidth="283.0" />
 
     <Button fx:id="createDB" contentDisplay="CENTER" mnemonicParsing="false" onAction="#createButtonTapped"
-            prefHeight="25.0" prefWidth="230.0" text="Create database" AnchorPane.bottomAnchor="0"/>
+            prefHeight="25.0" prefWidth="230.0" text="Пересоздать базу данных" AnchorPane.bottomAnchor="0"/>
 
 </AnchorPane>

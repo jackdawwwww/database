@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.base.RoleController">
+   <children>
+      <Label layoutX="157.0" layoutY="62.0" text="Выберите роль">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="SellerButton" layoutX="181.0" layoutY="122.0" mnemonicParsing="false" text="Продавец" onAction="#selTapped"/>
+      <Button fx:id="ControlButton" layoutX="166.0" layoutY="182.0" mnemonicParsing="false" text="Управляющий" onAction="#contTapped" />
+      <Button fx:id="ProviderButton" layoutX="177.0" layoutY="242.0" mnemonicParsing="false" text="Поставщик" onAction="#provTapped"/>
+      <Button fx:id="ClientButton" layoutX="175.0" layoutY="302.0" mnemonicParsing="false" text="Покупатель" onAction="#cliTapped"/>
+      <Button fx:id="ManagerButton" layoutX="180.0" layoutY="362.0" mnemonicParsing="false" text="Менеджер" onAction="#manTapped"/>
+      <Button fx:id="AccouterButton" layoutX="184.0" layoutY="424.0" mnemonicParsing="false" text="Бухгалтер" onAction="#accTapped"/>
+   </children>
+</AnchorPane>

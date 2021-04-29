@@ -9,13 +9,13 @@
             fx:controller="controller.base.EntranceController">
     <VBox alignment="CENTER" layoutX="280" layoutY="200" prefHeight="200.0" prefWidth="240.0">
         <Button fx:id="defaultButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#defaultButtonTapped"
-                prefHeight="25.0" prefWidth="230.0" text="Connect as Khlimankova">
+                prefHeight="25.0" prefWidth="230.0" text="Подключиться к серверу">
             <VBox.margin>
                 <Insets bottom="15.0"/>
             </VBox.margin>
         </Button>
 
         <Button fx:id="localhostButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#localhostButtonTapped"
-                prefHeight="25.0" prefWidth="230.0" text="Connect to localhost"/>
+                prefHeight="25.0" prefWidth="230.0" text="Подключиться локально"/>
     </VBox>
 </AnchorPane>

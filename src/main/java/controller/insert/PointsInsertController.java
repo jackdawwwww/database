@@ -75,7 +75,7 @@ public class PointsInsertController implements InsertController, Initializable {
 
     public void setItem(String item) {
         this.item = item;
-        insertButton.setText("Update");
+        insertButton.setText("Изменить");
 
         String type = DatabaseManager.getSubstring(" TYPE=", "TYPE=", item);
         String name = DatabaseManager.getSubstring(" NAME=", "NAME=", item);

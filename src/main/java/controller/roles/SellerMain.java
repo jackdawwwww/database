@@ -1,2 +1,4 @@
-package controller.roles;public class SellerMain {
+package controller.roles;
+
+public class SellerMain {
 }

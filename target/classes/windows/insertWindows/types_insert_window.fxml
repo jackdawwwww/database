@@ -8,16 +8,8 @@
 
 <AnchorPane prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.insert.TypesInsertController">
    <children>
-      <BorderPane layoutX="102.0" layoutY="32.0" prefHeight="237.0" prefWidth="246.0">
-         <center>
-            <TextField fx:id="nameField" prefHeight="54.0" prefWidth="246.0" promptText="Enter trade type name" BorderPane.alignment="CENTER" />
-         </center>
-         <top>
-            <Label fx:id="label" prefHeight="21.0" prefWidth="143.0" text="Insert new trade type" BorderPane.alignment="CENTER" />
-         </top>
-         <bottom>
-            <Button fx:id="insertButton" mnemonicParsing="false" onAction="#insertButtonTapped" text="Insert" BorderPane.alignment="CENTER" />
-         </bottom>
-      </BorderPane>
+      <TextField fx:id="nameField" layoutX="80.0" layoutY="123.0" prefHeight="54.0" prefWidth="290.0" promptText="Введите название типа торговой точки" />
+      <Button fx:id="insertButton" layoutX="182.0" layoutY="217.0" mnemonicParsing="false" onAction="#insertButtonTapped" text="Добавить" />
+      <Label fx:id="label" layoutX="80.0" layoutY="70.0" prefHeight="21.0" prefWidth="290.0" text="Добавление нового типа торговой точки" />
    </children>
 </AnchorPane>

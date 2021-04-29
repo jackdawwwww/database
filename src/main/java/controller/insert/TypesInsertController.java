@@ -40,8 +40,8 @@ public class TypesInsertController implements InsertController, Initializable {
 
     public void setItem(String item) {
         this.item = item;
-        insertButton.setText("Update");
-        label.setText("Update");
+        insertButton.setText("Изменить");
+        label.setText("");
 
         String name = DatabaseManager.getSubstring(" NAME=", "NAME=", item);
         nameField.setText(name);

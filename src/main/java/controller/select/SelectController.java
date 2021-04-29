@@ -19,7 +19,7 @@ public interface SelectController {
 
     default void showAlert(String message, String comment) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
+        alert.setTitle("Внимание");
         alert.setHeaderText(message);
         alert.setContentText(comment);
         alert.showAndWait();
@@ -47,7 +47,7 @@ public interface SelectController {
                 stage.setScene(new Scene(root));
                 stage.show();
             } else {
-                showAlert("Empty result", "change parameters");
+                showAlert("Пустой результат", "попробуйте поменять параметры");
             }
         } catch (Exception e) {
             e.printStackTrace();

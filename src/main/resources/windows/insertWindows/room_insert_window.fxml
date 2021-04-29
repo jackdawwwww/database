@@ -6,14 +6,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.insert.RoomInsertController">
    <children>
       <AnchorPane layoutX="60.0" layoutY="16.0" prefHeight="234.0" prefWidth="280.0">
          <children>
-            <Button fx:id="insertButton" layoutX="98.0" layoutY="38.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="84.0" text="Insert" onAction="#insertButtonTapped" />
+            <Button fx:id="insertButton" layoutX="32.0" layoutY="41.0" mnemonicParsing="false" onAction="#insertButtonTapped" prefHeight="48.0" prefWidth="217.0" text="Добавить торговый зал" />
             <ChoiceBox fx:id="pointChoose" layoutX="65.0" layoutY="138.0" prefWidth="150.0" />
-            <Label layoutX="76.0" layoutY="96.0" text="Choose trade point" />
+            <Label layoutX="50.0" layoutY="96.0" text="Выберите торговую точку" />
          </children>
       </AnchorPane>
    </children>

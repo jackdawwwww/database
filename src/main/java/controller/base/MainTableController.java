@@ -18,8 +18,8 @@ import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class MainController implements Initializable {
-    public final static String FXML = "/windows/main_window.fxml";
+public class MainTableController implements Initializable {
+    public final static String FXML = "/windows/main_table_window.fxml";
     public final static String SEL_FXML = "/windows/choice_window.fxml";
 
     private final Connection connection;
@@ -27,7 +27,7 @@ public class MainController implements Initializable {
     public static final ObservableList data =
             FXCollections.observableArrayList();
 
-    public MainController() {
+    public MainTableController() {
         connection = Main.getConnection();
         manager = new DatabaseManager(connection);
 

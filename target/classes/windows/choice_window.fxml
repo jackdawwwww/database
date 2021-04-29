@@ -10,7 +10,7 @@
       <AnchorPane layoutX="1.0" prefHeight="600.0" prefWidth="800.0">
          <children>
             <ListView fx:id="selectsListView" layoutX="75.0" layoutY="50.0" prefHeight="500.0" prefWidth="650.0" />
-            <Label layoutX="315.0" layoutY="14.0" text="Available information" textAlignment="CENTER">
+            <Label layoutX="315.0" layoutY="14.0" text="Доступная информация" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
