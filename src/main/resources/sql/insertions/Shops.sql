@@ -1,0 +1,1 @@
+INSERT INTO Магазины(name, point_size, rent_price, communal_payments, number_of_counters, rooms_count) VALUES('Pyatyorochka', 1, 1000, 200, 10, 2)

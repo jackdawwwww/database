@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.roles.SellerManagerMain">
+   <children>
+      <Button defaultButton="true" layoutX="143.0" layoutY="84.0" mnemonicParsing="false" onAction="#getWorkForSeller" text="Данные о выработке на одного продавца " />
+      <Button layoutX="254.0" layoutY="34.0" mnemonicParsing="false" onAction="#getSellersList" text="Продавцы" />
+      <Button layoutX="14.0" layoutY="34.0" mnemonicParsing="false" onAction="#getPointsList" text="Торговые точки" />
+      <Button layoutX="514.0" layoutY="34.0" mnemonicParsing="false" onAction="#getSectionsList" text="Секции" />
+      <Button disable="true" layoutX="127.0" layoutY="130.0" mnemonicParsing="false" onAction="#getWorkBySeller" text="Данные о выработке определенного продавца " />
+      <Button disable="true" layoutX="156.0" layoutY="185.0" mnemonicParsing="false" onAction="#getSalary" text="Данные о заработной плате продавцов" />
+      <Button disable="true" layoutX="99.0" layoutY="238.0" mnemonicParsing="false" onAction="#getStat" text="Данные об отношении объема продаж к объему точки " />
+      <Button disable="true" layoutX="140.0" layoutY="293.0" mnemonicParsing="false" onAction="#getClientByGood" text="Сведения о покупателях указанного товара " />
+      <Button disable="true" layoutX="137.0" layoutY="342.0" mnemonicParsing="false" onAction="#getClientTop" text="Сведения о наиболее активных покупателях" />
+   </children>
+</AnchorPane>

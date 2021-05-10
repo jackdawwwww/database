@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.roles.AdminMain">
+   <children>
+      <Button defaultButton="true" layoutX="200.0" layoutY="138.0" mnemonicParsing="false" onAction="#getAll" text="Перейти к данным">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="177.0" layoutY="194.0" mnemonicParsing="false" text="Добавить нового пользователя" onAction="#createNew"/>
+   </children>
+</AnchorPane>

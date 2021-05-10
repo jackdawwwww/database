@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.roles.ProviderMain"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.roles.ProviderMain">
+   <children>
+      <Button defaultButton="true" layoutX="196.0" layoutY="94.0" mnemonicParsing="false" text="Просмотр активных заявок" onAction="#getActive"/>
+      <Button layoutX="234.0" layoutY="169.0" mnemonicParsing="false" text="История заявок" onAction="#getStory" />
+      <Button layoutX="241.0" layoutY="231.0" mnemonicParsing="false" text="Наши товары" onAction="#getGoods"/>
+      <Button layoutX="235.0" layoutY="291.0" mnemonicParsing="false" text="Наши поставки" onAction="#getDel"/>
+   </children>
 </AnchorPane>

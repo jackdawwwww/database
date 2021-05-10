@@ -1,0 +1,1 @@
+CREATE OR REPLACE TRIGGER tr_ai_requests before INSERT ON requests FOR each row BEGIN  SELECT sq_requests.NEXTVAL  INTO :new.id  FROM dual;END;

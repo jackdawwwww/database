@@ -1,33 +1,46 @@
 package controller.base;
 
-import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
+import utils.Roles;
 
 public class RoleController {
 
     static String FXML = "/windows/role_window.fxml";
-    public Button SellerButton;
-    public Button ControlButton;
-    public Button ProviderButton;
-    public Button ClientButton;
-    public Button ManagerButton;
-    public Button AccouterButton;
+    private Roles role = Roles.admin;
+    public Button AdminButton;
 
-    public void selTapped(ActionEvent actionEvent) {
+    public void selTapped() {
+        role = Roles.seller;
+        showNextWindow();
     }
 
-    public void contTapped(ActionEvent actionEvent) {
+    public void cliTapped() {
+        role = Roles.client;
+        showNextWindow();
     }
 
-    public void provTapped(ActionEvent actionEvent) {
+    public void manTapped() {
+        role = Roles.manager;
+        showNextWindow();
     }
 
-    public void cliTapped(ActionEvent actionEvent) {
+    public void accTapped() {
+        role = Roles.accounting;
+        showNextWindow();
     }
 
-    public void manTapped(ActionEvent actionEvent) {
+    public void adminTapped() {
+        role = Roles.admin;
+        showNextWindow();
     }
 
-    public void accTapped(ActionEvent actionEvent) {
+    public void selManTapped() {
+        role = Roles.sellerManager;
+        showNextWindow();
+    }
+
+    private void showNextWindow() {
+        String windowName = role.getWindowName();
+
     }
 }

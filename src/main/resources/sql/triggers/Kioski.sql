@@ -1,0 +1,1 @@
+CREATE OR REPLACE TRIGGER tr_ai_k before INSERT ON Киоски FOR each row BEGIN  SELECT sq_k.NEXTVAL  INTO :new.id  FROM dual;END;

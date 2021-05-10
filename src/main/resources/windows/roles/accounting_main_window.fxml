@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.roles.AccountingMain"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="380.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.roles.AccountingMain">
+   <children>
+      <Button layoutX="82.0" layoutY="121.0" mnemonicParsing="false" onAction="#getNomenclature" text="Номенклатура и объем товаров в указанной торговой точке" />
+      <Button disable="true" layoutX="50.0" layoutY="190.0" mnemonicParsing="false" onAction="#getSalesData" text="Данные об объеме продаж указанного товара за некоторый период " />
+      <Button disable="true" layoutX="144.0" layoutY="266.0" mnemonicParsing="false" onAction="#getRentable" text="Данные о рентабельности торговой точки" />
+      <Button disable="true" layoutX="200.0" layoutY="313.0" mnemonicParsing="false" onAction="#getData" text="Данные о товарообороте " />
+      <Button defaultButton="true" layoutX="246.0" layoutY="45.0" mnemonicParsing="false" text="Учет товаров" onAction="#accounting"/>
+   </children>
 </AnchorPane>

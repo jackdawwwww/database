@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -11,11 +12,11 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="SellerButton" layoutX="181.0" layoutY="122.0" mnemonicParsing="false" text="Продавец" onAction="#selTapped"/>
-      <Button fx:id="ControlButton" layoutX="166.0" layoutY="182.0" mnemonicParsing="false" text="Управляющий" onAction="#contTapped" />
-      <Button fx:id="ProviderButton" layoutX="177.0" layoutY="242.0" mnemonicParsing="false" text="Поставщик" onAction="#provTapped"/>
-      <Button fx:id="ClientButton" layoutX="175.0" layoutY="302.0" mnemonicParsing="false" text="Покупатель" onAction="#cliTapped"/>
-      <Button fx:id="ManagerButton" layoutX="180.0" layoutY="362.0" mnemonicParsing="false" text="Менеджер" onAction="#manTapped"/>
-      <Button fx:id="AccouterButton" layoutX="184.0" layoutY="424.0" mnemonicParsing="false" text="Бухгалтер" onAction="#accTapped"/>
+      <Button layoutX="181.0" layoutY="122.0" mnemonicParsing="false" onAction="#selTapped" text="Продавец" />
+      <Button layoutX="175.0" layoutY="197.0" mnemonicParsing="false" onAction="#cliTapped" text="Покупатель" />
+      <Button layoutX="178.0" layoutY="275.0" mnemonicParsing="false" onAction="#manTapped" text="Менеджер" />
+      <Button layoutX="182.0" layoutY="354.0" mnemonicParsing="false" onAction="#accTapped" text="Бухгалтер" />
+      <Button fx:id="AdminButton" layoutX="115.0" layoutY="482.0" mnemonicParsing="false" onAction="#adminTapped" text="Администратор базы данных" />
+      <Button layoutX="165.0" layoutY="425.0" mnemonicParsing="false" onAction="#selManTapped" text="Управляющий" />
    </children>
 </AnchorPane>

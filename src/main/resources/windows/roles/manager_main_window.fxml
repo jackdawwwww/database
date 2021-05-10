@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.roles.ManagerMain"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.roles.ManagerMain">
+   <children>
+      <Button defaultButton="true" layoutX="191.0" layoutY="80.0" mnemonicParsing="false" onAction="#newReq" text="Оформить заказ поставщику" />
+      <Button layoutX="36.0" layoutY="25.0" mnemonicParsing="false" onAction="#getReq" text="Обработать заявки" />
+      <Button layoutX="410.0" layoutY="25.0" mnemonicParsing="false" onAction="#getNom" text="Номенклатура товаров" />
+      <Button layoutX="118.0" layoutY="136.0" mnemonicParsing="false" onAction="#getProvByParam" text="Поставщики, поставляющие указанный вид товара" />
+      <Button disable="true" layoutX="134.0" layoutY="284.0" mnemonicParsing="false" onAction="#getSelByParam" text="Покупатели, купившие указанный вид товара " />
+      <Button disable="true" layoutX="130.0" layoutY="233.0" mnemonicParsing="false" onAction="#getDataByGood" text="Данные об объеме продаж указанного товара " />
+      <Button disable="true" layoutX="46.0" layoutY="185.0" mnemonicParsing="false" onAction="#getDataByProv" text="Сведения о поставках определенного товара указанным поставщиком " />
+      <Button disable="true" layoutX="83.0" layoutY="336.0" mnemonicParsing="false" onAction="#getDataByReq" text="Сведения о поставках товаров по указанному номеру заказа" />
+   </children>
 </AnchorPane>

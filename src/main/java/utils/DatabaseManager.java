@@ -11,7 +11,8 @@ import java.util.stream.Stream;
 public class DatabaseManager {
     private static final String[] tableNamesArray = {"TradeTypes.sql", "Goods.sql", "TradePoints.sql", "TradeRoom.sql",
             "Seller.sql", "Purchase_compositions.sql", "Customers.sql", "Sales.sql", "Providers.sql", "Accounting.sql",
-            "Deliveries.sql", "DeliveriesGoods.sql","TradeSectionPoint.sql"};
+            "Deliveries.sql", "DeliveriesGoods.sql","TradeSectionPoint.sql", "Requests.sql", "Kioski.sql", "Lotki.sql",
+            "Shops.sql", "Univermags.sql"};
 
     private final Connection connection;
     private final List<String> tablesName;
