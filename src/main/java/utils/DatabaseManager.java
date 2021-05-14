@@ -133,6 +133,12 @@ public class DatabaseManager {
         execute(getSequences());
         execute(getAutoincrement());
         insertDefault();
+
+        try {
+            connection.executeQuery("CREATE ROLE admin");
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+        }
     }
 
     private String getScriptFromFile(String relativePath) {

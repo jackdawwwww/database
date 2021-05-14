@@ -25,6 +25,8 @@ import java.util.ResourceBundle;
 
 public class PointsInsertController implements InsertController, Initializable {
 
+    public TextField roomsNum;
+    public TextField sectionsNum;
     private DatabaseManager manager;
     private ChangeListener listener;
     private ObservableStringValue name = new SimpleStringProperty("");

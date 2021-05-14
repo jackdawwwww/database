@@ -1,0 +1,22 @@
+CREATE ROLE admin
+GRANT CREATE SESSION TO admin
+grant all PRIVILEGES to admin
+
+create role client
+grant create session to client
+grant select any table to client
+grant insert, update, delete on "REQUESTS" to client
+
+create role seller
+grant create session to seller
+grant select any table to seller
+grant insert, update, delete on "SALES" to seller
+grant insert, update, delete on "PURCHASE_COMPOSITIONS" to seller
+
+create role provider
+grant create session to provider
+grant select any table to provider
+grant insert, update, delete on "REQUESTS" to provider
+grant insert, update, delete on "DELIVERIES_GOODS" to provider
+grant insert, update, delete on "DELIVERIES" to provider
+

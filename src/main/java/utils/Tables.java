@@ -7,6 +7,18 @@ public enum Tables {
     tradePoints(new Table(
             "TRADE_POINTS",
             "/windows/insertWindows/points_insert_window.fxml")),
+    lotki(new Table(
+            "Лотки",
+            "/windows/insertWindows/lotki_insert_window.fxml")),
+    kioski(new Table(
+            "Киоски",
+            "/windows/insertWindows/kioski_insert_window.fxml")),
+    shops(new Table(
+            "Магазины",
+            "/windows/insertWindows/shops_insert_window.fxml")),
+    univermags(new Table(
+            "Универмаги",
+            "/windows/insertWindows/univermags_insert_window.fxml")),
     tradeTypes(new Table(
             "TRADE_TYPES",
             "/windows/insertWindows/types_insert_window.fxml")),

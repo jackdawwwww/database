@@ -10,12 +10,14 @@
          <children>
             <ChoiceBox fx:id="typeChoice" layoutX="14.0" layoutY="101.0" prefWidth="150.0" />
             <Label layoutX="21.0" layoutY="65.0" text="Тип торговой точки" />
-            <TextField fx:id="nameField" layoutX="14.0" layoutY="181.0" prefHeight="31.0" prefWidth="259.0" promptText="Введите название торговой точки" />
-            <TextField fx:id="pointSize" layoutX="14.0" layoutY="262.0" promptText="Размер точки" />
-            <TextField fx:id="rentPrice" layoutX="14.0" layoutY="343.0" promptText="Арендная плата" />
-            <TextField fx:id="communalPayments" layoutX="307.0" layoutY="181.0" prefHeight="31.0" prefWidth="214.0" promptText="Коммунальные платежи " />
-            <TextField fx:id="countersNum" layoutX="307.0" layoutY="262.0" prefHeight="31.0" prefWidth="214.0" promptText="Количество продавцов" />
+            <TextField fx:id="nameField" layoutX="15.0" layoutY="157.0" prefHeight="31.0" prefWidth="259.0" promptText="Введите название торговой точки" />
+            <TextField fx:id="pointSize" layoutX="21.0" layoutY="228.0" promptText="Размер точки" />
+            <TextField fx:id="rentPrice" layoutX="21.0" layoutY="294.0" promptText="Арендная плата" />
+            <TextField fx:id="communalPayments" layoutX="308.0" layoutY="228.0" prefHeight="31.0" prefWidth="214.0" promptText="Коммунальные платежи " />
+            <TextField fx:id="countersNum" layoutX="308.0" layoutY="294.0" prefHeight="31.0" prefWidth="214.0" promptText="Количество продавцов" />
             <Button fx:id="insertButton" layoutX="356.0" layoutY="86.0" mnemonicParsing="false" onAction="#insertButtonTapped" prefHeight="62.0" prefWidth="117.0" text="Добавить" />
+            <TextField fx:id="roomsNum" layoutX="16.0" layoutY="357.0" prefHeight="31.0" prefWidth="214.0" promptText="Количество залов" />
+            <TextField fx:id="sectionsNum" layoutX="308.0" layoutY="357.0" prefHeight="31.0" prefWidth="214.0" promptText="Количество секций" />
          </children>
       </AnchorPane>
    </children>

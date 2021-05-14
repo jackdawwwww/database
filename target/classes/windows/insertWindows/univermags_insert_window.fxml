@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.insert.UnivermagsInsertController">
+   <children>
+      <AnchorPane layoutX="55.0" layoutY="-34.0" prefHeight="436.0" prefWidth="547.0">
+         <children>
+            <TextField fx:id="nameField" layoutX="7.0" layoutY="117.0" prefHeight="31.0" prefWidth="259.0" promptText="Введите название универмага" />
+            <TextField fx:id="pointSize" layoutX="14.0" layoutY="181.0" promptText="Размер точки" />
+            <TextField fx:id="rentPrice" layoutX="14.0" layoutY="262.0" promptText="Арендная плата" />
+            <TextField fx:id="communalPayments" layoutX="307.0" layoutY="181.0" prefHeight="31.0" prefWidth="214.0" promptText="Коммунальные платежи " />
+            <TextField fx:id="countersNum" layoutX="307.0" layoutY="262.0" prefHeight="31.0" prefWidth="214.0" promptText="Количество продавцов" />
+            <TextField fx:id="roomsNum" layoutX="14.0" layoutY="341.0" prefHeight="31.0" prefWidth="214.0" promptText="Количество залов" />
+            <Button fx:id="insertButton" layoutX="356.0" layoutY="86.0" mnemonicParsing="false" onAction="#insertButtonTapped" prefHeight="62.0" prefWidth="117.0" text="Добавить" />
+            <TextField fx:id="sectionsNum" layoutX="308.0" layoutY="341.0" prefHeight="31.0" prefWidth="214.0" promptText="Количество секций" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

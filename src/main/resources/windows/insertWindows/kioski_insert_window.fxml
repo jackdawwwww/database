@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.insert.KioskiInsertController">
+   <children>
+      <AnchorPane layoutX="55.0" layoutY="-34.0" prefHeight="436.0" prefWidth="547.0">
+         <children>
+            <Label layoutX="44.0" layoutY="96.0" text="Введите название киоска" />
+            <TextField fx:id="nameField" layoutX="14.0" layoutY="148.0" prefHeight="31.0" prefWidth="259.0" promptText="Введите название торговой точки" text="У Ивана" />
+            <TextField fx:id="pointSize" layoutX="14.0" layoutY="212.0" promptText="Размер точки" />
+            <TextField fx:id="rentPrice" layoutX="14.0" layoutY="262.0" promptText="Арендная плата" />
+            <TextField fx:id="communalPayments" layoutX="308.0" layoutY="212.0" prefHeight="31.0" prefWidth="214.0" promptText="Коммунальные платежи " />
+            <TextField fx:id="countersNum" layoutX="308.0" layoutY="262.0" prefHeight="31.0" prefWidth="214.0" promptText="Количество продавцов" />
+            <Button fx:id="insertButton" layoutX="356.0" layoutY="86.0" mnemonicParsing="false" onAction="#insertButtonTapped" prefHeight="62.0" prefWidth="117.0" text="Добавить" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

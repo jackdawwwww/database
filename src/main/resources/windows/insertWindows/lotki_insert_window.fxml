@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.insert.LotkiInsertController">
+   <children>
+      <AnchorPane layoutX="55.0" layoutY="-34.0" prefHeight="436.0" prefWidth="547.0">
+         <children>
+            <TextField fx:id="nameField" layoutX="144.0" layoutY="159.0" prefHeight="31.0" prefWidth="259.0" promptText="Лоток на Красном" />
+            <Button fx:id="insertButton" layoutX="215.0" layoutY="218.0" mnemonicParsing="false" onAction="#insertButtonTapped" prefHeight="62.0" prefWidth="117.0" text="Добавить" />
+            <Label layoutX="174.0" layoutY="78.0" text="Введите название лотка" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

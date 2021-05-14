@@ -10,6 +10,9 @@ public enum Roles {
     client(new Role(
             "client",
             "/windows/roles/client_main_window.fxml")),
+    provider(new Role(
+            "provider",
+            "/windows/roles/provider_main_window.fxml")),
     manager(new Role(
             "manager",
             "/windows/roles/manager_main_window.fxml")),

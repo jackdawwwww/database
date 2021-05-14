@@ -100,6 +100,10 @@ public class TableController implements Initializable {
                 for(int j = 1; j <= columnSize; j++) {
                     String value = set.getString(j);
 
+                    if (value == null) {
+                        value = "";
+                    }
+
                     try {
                         Date date = formatter.parse(value);
                         value = formatter2.format(date);
@@ -107,6 +111,7 @@ public class TableController implements Initializable {
 
                     }
                     map.put(columnNames.get(j-1), value);
+
                 }
                 items.add(map);
             }

@@ -43,6 +43,10 @@ public class Connection {
         }
     }
 
+    public void signIn(String login, String password) throws SQLException {
+
+    }
+
     private void createConnection() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");

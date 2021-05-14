@@ -1,0 +1,1 @@
+CREATE OR REPLACE TRIGGER tr_ai_u before INSERT ON Универмаги FOR each row BEGIN  SELECT sq_u.NEXTVAL  INTO :new.id  FROM dual;END;

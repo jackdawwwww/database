@@ -1,0 +1,1 @@
+CREATE OR REPLACE TRIGGER tr_ai_s before INSERT ON Магазины FOR each row BEGIN  SELECT sq_s.NEXTVAL  INTO :new.id  FROM dual;END;
