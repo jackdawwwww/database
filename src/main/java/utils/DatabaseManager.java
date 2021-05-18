@@ -12,7 +12,7 @@ public class DatabaseManager {
     private static final String[] tableNamesArray = {"TradeTypes.sql", "Goods.sql", "TradePoints.sql", "TradeRoom.sql",
             "Seller.sql", "Purchase_compositions.sql", "Customers.sql", "Sales.sql", "Providers.sql", "Accounting.sql",
             "Deliveries.sql", "DeliveriesGoods.sql","TradeSectionPoint.sql", "Requests.sql", "Kioski.sql", "Lotki.sql",
-            "Shops.sql", "Univermags.sql"};
+            "Shops.sql", "Univermags.sql", "Users.sql"};
 
     private final Connection connection;
     private final List<String> tablesName;
@@ -133,12 +133,14 @@ public class DatabaseManager {
         execute(getSequences());
         execute(getAutoincrement());
         insertDefault();
+        dropRoles();
+        createRoles();
 
-        try {
-            connection.executeQuery("CREATE ROLE admin");
-        } catch (SQLException throwable) {
-            throwable.printStackTrace();
-        }
+//        try {
+//            connection.executeQuery("CREATE ROLE admin");
+//        } catch (SQLException throwable) {
+//            throwable.printStackTrace();
+//        }
     }
 
     private String getScriptFromFile(String relativePath) {
@@ -208,4 +210,13 @@ public class DatabaseManager {
 
     }
 
+    private void dropRoles() {
+        List<String> list = getListOfScriptsFromFile("dropTables/Roles.sql");
+        execute(list);
+    }
+
+    private void createRoles() {
+        List<String> list = getListOfScriptsFromFile("tablesCreation/Roles.sql");
+        execute(list);
+    }
 }

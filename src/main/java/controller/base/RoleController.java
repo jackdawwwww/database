@@ -29,7 +29,7 @@ public class RoleController {
     }
 
     public void manTapped(ActionEvent actionEvent) {
-        role = Roles.manager;
+        role = Roles.reqManager;
         this.actionEvent = actionEvent;
         showNextWindow();
     }

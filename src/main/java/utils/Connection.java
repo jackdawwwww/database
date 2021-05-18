@@ -43,8 +43,19 @@ public class Connection {
         }
     }
 
-    public void signIn(String login, String password) throws SQLException {
+    public Roles signIn(String login, String password) throws SQLException {
+        Roles role = null;
+        ResultSet set = executeQueryAndGetResult("SELECT role from users where (username = '" + login
+                + "') and (password = '" + password + "')");
 
+        if (set != null) {
+            while (set.next()) {
+                String name = set.getString(1);
+                role = Roles.getRoleByName(name);
+            }
+        }
+
+        return role;
     }
 
     private void createConnection() {
@@ -97,7 +108,7 @@ public class Connection {
         }
     }
 
-    public List<List<String>> select(String sql){
+    public List<List<String>> select(String sql) {
         return select(sql, result -> {
             try {
                 ArrayList<String> list = new ArrayList<>(1);

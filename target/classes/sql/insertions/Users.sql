@@ -1,0 +1,7 @@
+INSERT INTO users (username, password, role) VALUES ('admin', 'admin','admin')
+INSERT INTO users (username, password, role) VALUES ('client', 'client','client')
+INSERT INTO users (username, password, role) VALUES ('seller', 'seller','seller')
+INSERT INTO users (username, password, role) VALUES ('provider', 'provider','provider')
+INSERT INTO users (username, password, role) VALUES ('accounting', 'accounting','accounting')
+INSERT INTO users (username, password, role) VALUES ('req_manager', 'req_manager','req_manager')
+INSERT INTO users (username, password, role) VALUES ('seller_manager', 'seller_manager','seller_manager')

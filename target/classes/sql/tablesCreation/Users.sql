@@ -1,0 +1,1 @@
+CREATE TABLE users(user_id NUMBER NOT NULL, username VARCHAR(80) NOT NULL, password VARCHAR(80) NOT NULL, role VARCHAR(60) NOT NULL, PRIMARY KEY (user_id))

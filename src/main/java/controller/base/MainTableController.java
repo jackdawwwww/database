@@ -101,6 +101,7 @@ public class MainTableController implements Initializable {
 
             tableListView.refresh();
         }
+
         catch(SQLException throwable) {
             throwable.printStackTrace();
         }

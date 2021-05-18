@@ -39,8 +39,7 @@ public class EntranceController implements Initializable {
             connection.registerDefaultConnection();
             Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
-            Parent root = loader.load(getClass().getResourceAsStream(RoleController.FXML));
-        //    Parent root = loader.load(getClass().getResourceAsStream(MainTableController.FXML));
+            Parent root = loader.load(getClass().getResourceAsStream(Enter2Controller.LOGIN_WINDOW_FXML));
             primaryStage.setScene(new Scene(root));
         } catch (SQLException ex) {
             System.out.println("SQLException: error with connection to server");
@@ -79,7 +78,7 @@ public class EntranceController implements Initializable {
                 connection.registerLocalhostConnection(loginText.getText(), passwordText.getText());
                 Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 FXMLLoader loader = new FXMLLoader();
-                Parent root = loader.load(getClass().getResourceAsStream(MainTableController.FXML));
+                Parent root = loader.load(getClass().getResourceAsStream(Enter2Controller.LOGIN_WINDOW_FXML));
 
                 primaryStage.setScene(new Scene(root));
             } catch (SQLException ex) {

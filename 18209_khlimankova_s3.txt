@@ -20,3 +20,25 @@ grant insert, update, delete on "REQUESTS" to provider
 grant insert, update, delete on "DELIVERIES_GOODS" to provider
 grant insert, update, delete on "DELIVERIES" to provider
 
+create role accounting
+grant create session to accounting
+grant select any table to accounting
+grant insert, update, delete on "GOODS" to accounting
+grant insert, update, delete on "ACCOUNTING" to accounting
+
+create role manager
+grant create session to manager
+grant select any table to manager
+grant insert, update, delete on "REQUESTS" to manager
+grant insert, update, delete on "GOODS" to manager
+grant insert, update, delete on "DELIVERIES" to manager
+grant insert, update, delete on "PROVIDERS" to manager
+
+create role seller_manager
+grant create session to seller_manager
+grant select any table to seller_manager
+grant insert, update, delete on "SELLER" to seller_manager
+grant insert, update, delete on "TRADE_POINTS" to seller_manager
+grant insert, update, delete on "TRADE_ROOM" to seller_manager
+grant insert, update, delete on "TRADE_SECTION_POINT" to seller_manager
+

@@ -13,6 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import utils.Connection;
+import utils.Roles;
 
 import java.io.IOException;
 import java.net.URL;
@@ -39,15 +40,15 @@ public class Enter2Controller implements Initializable  {
     public void loginButtonTapped(ActionEvent event) throws IOException {
         if (isNotEmpty()) {
             try {
-                connection.signIn(loginText.getText(), passwordText.getText());
+                Roles role = connection.signIn(loginText.getText(), passwordText.getText());
                 Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 FXMLLoader loader = new FXMLLoader();
-//                Parent root = loader.load(getClass().getResourceAsStream(RoleController.FXML));
-                Parent root = loader.load(getClass().getResourceAsStream(MainTableController.FXML));
+                String windowName = role.getWindowName();
+                Parent root = loader.load(getClass().getResourceAsStream(windowName));
                 primaryStage.setScene(new Scene(root));
             } catch (SQLException ex) {
                 System.out.println("SQLException: error with connection to server");
-                showAlert("error with connection to server", "");
+                showAlert("Invalid user data", "Check your login and password");
             } catch (ExceptionInInitializerError ex) {
                 System.out.println("ExceptionInInitializerError: session is already exist");
                 showAlert("session is already exist", "");

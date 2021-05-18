@@ -13,14 +13,14 @@ public enum Roles {
     provider(new Role(
             "provider",
             "/windows/roles/provider_main_window.fxml")),
-    manager(new Role(
-            "manager",
+    reqManager(new Role(
+            "req_manager",
             "/windows/roles/manager_main_window.fxml")),
     seller(new Role(
-            "manager",
+            "seller",
             "/windows/roles/seller_main_window.fxml")),
     sellerManager(new Role(
-            "manager",
+            "seller_manager",
             "/windows/roles/sellers_manager_main_window.fxml"));
 
     private Role role;
