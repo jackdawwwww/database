@@ -58,6 +58,11 @@ public class Connection {
         return role;
     }
 
+    public void register(String login, String password, String roleName) throws SQLException {
+        String sql = "INSERT INTO users (username, password, role) VALUES ('" + login + "', '" + password + "','" + roleName + "')";
+        executeQuery(sql);
+    }
+
     private void createConnection() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");

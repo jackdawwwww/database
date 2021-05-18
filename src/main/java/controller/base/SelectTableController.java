@@ -1,6 +1,5 @@
 package controller.base;
 
-import init.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

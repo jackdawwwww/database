@@ -1,6 +1,7 @@
 package controller.roles;
 
 import controller.base.MainTableController;
+import controller.base.RegisterController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -21,7 +22,22 @@ public class AdminMain {
     }
 
     /// Добавить нового пользователя
-    public void createNew(ActionEvent actionEvent) {
+    public void createNew() {
+        Stage stage = new Stage();
+        stage.setTitle("Регистрация нового пользователя");
+
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = null;
+
+        try {
+            root = loader.load(getClass().getResourceAsStream(RegisterController.windowName));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        assert root != null;
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
     private void showSelectWindow(String name) {

@@ -17,7 +17,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class EntranceController implements Initializable {
+public class EntranceController {
     public final static String ENTRANCE_WINDOW_FXML = "/windows/entrance_window.fxml";
     public final static String LOGIN_WINDOW_FXML = "/windows/login_window.fxml";
 
@@ -94,11 +94,6 @@ public class EntranceController implements Initializable {
         } else {
             showAlert("Empty field!", "Enter login and password");
         }
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 
     private boolean isNotEmpty() {

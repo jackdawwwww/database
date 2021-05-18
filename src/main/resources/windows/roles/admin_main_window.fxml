@@ -12,6 +12,6 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button disable="true" layoutX="177.0" layoutY="194.0" mnemonicParsing="false" onAction="#createNew" text="Добавить нового пользователя" />
+      <Button layoutX="177.0" layoutY="194.0" mnemonicParsing="false" onAction="#createNew" text="Добавить нового пользователя" />
    </children>
 </AnchorPane>

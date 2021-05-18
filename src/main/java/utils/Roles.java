@@ -1,5 +1,8 @@
 package utils;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public enum Roles {
     accounting(new Role(
             "accounting",
@@ -44,6 +47,18 @@ public enum Roles {
             }
         }
         throw new IllegalArgumentException("No enum found with name: [" + name + "]");
+    }
+
+    public static Map<String, Roles> getRoles() {
+        Map<String, Roles> roles = new HashMap<>();
+        roles.put("Бухгалтер", Roles.accounting);
+        roles.put("Поставщик", Roles.provider);
+        roles.put("Клиент", Roles.client);
+        roles.put("Админ", Roles.admin);
+        roles.put("Продавец", Roles.seller);
+        roles.put("Менеджер по поставкам", Roles.reqManager);
+        roles.put("Менеджер по персоналу", Roles.sellerManager);
+        return roles;
     }
 }
 

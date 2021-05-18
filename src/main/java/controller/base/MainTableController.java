@@ -3,6 +3,7 @@ package controller.base;
 import init.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -105,5 +106,23 @@ public class MainTableController implements Initializable {
         catch(SQLException throwable) {
             throwable.printStackTrace();
         }
+    }
+
+    public void registerButtonTapped() {
+        Stage stage = new Stage();
+        stage.setTitle("Регистрация нового пользователя");
+
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = null;
+
+        try {
+            root = loader.load(getClass().getResourceAsStream(RegisterController.windowName));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        assert root != null;
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }

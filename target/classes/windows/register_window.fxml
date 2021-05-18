@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.base.RegisterController">
+   <children>
+       <Button fx:id="loginButton" contentDisplay="CENTER" layoutX="185.0" layoutY="268.0" mnemonicParsing="false" onAction="#registerButtonTapped" prefHeight="25.0" prefWidth="230.0" text="Зарегистрировать" />
+       <TextArea fx:id="loginText" layoutX="166.0" layoutY="111.0" prefHeight="35.0" prefWidth="270.0" promptText="Введите логин" />
+       <TextArea fx:id="passwordText" layoutX="166.0" layoutY="165.0" prefHeight="35.0" prefWidth="270.0" promptText="Введите пароль" />
+       <ChoiceBox fx:id="roleChoice" layoutX="165.0" layoutY="220.0" prefWidth="270.0" />
+   </children>
+
+</AnchorPane>
