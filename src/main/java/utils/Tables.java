@@ -24,7 +24,13 @@ public enum Tables {
             "/windows/insertWindows/types_insert_window.fxml")),
     tradeRoom(new Table(
             "TRADE_ROOM",
-            "/windows/insertWindows/room_insert_window.fxml"));
+            "/windows/insertWindows/room_insert_window.fxml")),
+    accounting(new Table(
+            "ACCOUNTING",
+            "/windows/insertWindows/accounting_insert_window.fxml")),
+    requests(new Table(
+            "REQUESTS",
+            "/windows/insertWindows/request_insert_window.fxml"));
 
     private Table table;
 

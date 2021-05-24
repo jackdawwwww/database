@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.roles.ClientMain">
    <children>
-      <Button fx:id="button" layoutX="434.0" layoutY="77.0" mnemonicParsing="false" onAction="#newClient" text="Мои данные" />
-      <Button layoutX="216.0" layoutY="181.0" mnemonicParsing="false" onAction="#newRequest" text="Оформить заказ">
+      <Button fx:id="newReq" layoutX="216.0" layoutY="181.0" mnemonicParsing="false" onAction="#newRequest" text="Оформить заказ">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
-      <Button layoutX="68.0" layoutY="77.0" mnemonicParsing="false" text="Мои заказы" onAction="#myRequests"/>
+      <Button fx:id="myReq" layoutX="249.0" layoutY="77.0" mnemonicParsing="false" onAction="#myRequests" text="Мои заказы"/>
    </children>
 </AnchorPane>

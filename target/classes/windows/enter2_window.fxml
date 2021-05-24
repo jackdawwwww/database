@@ -7,9 +7,9 @@
    <children>
 
               <Button fx:id="loginButton" contentDisplay="CENTER" layoutX="186.0" layoutY="229.0" mnemonicParsing="false" onAction="#loginButtonTapped" prefHeight="25.0" prefWidth="230.0" text="Войти" />
-        <PasswordField fx:id="passwordText" alignment="TOP_LEFT" layoutX="207.0" layoutY="165.0" prefHeight="35.0" promptText="Введите пароль" text="admin" />
+        <PasswordField fx:id="passwordText" alignment="TOP_LEFT" layoutX="207.0" layoutY="165.0" prefHeight="35.0" promptText="Введите пароль" text="provider" />
 
-              <TextArea fx:id="loginText" layoutX="166.0" layoutY="111.0" prefHeight="35.0" prefWidth="270.0" promptText="Введите логин" text="admin" />
+              <TextArea fx:id="loginText" layoutX="166.0" layoutY="111.0" prefHeight="35.0" prefWidth="270.0" promptText="Введите логин" text="provider" />
       <Label layoutX="91.0" layoutY="340.0" text="Для регистрации обратитесь к администратору базы данных" />
    </children>
 

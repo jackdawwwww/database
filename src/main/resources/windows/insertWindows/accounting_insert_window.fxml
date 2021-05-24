@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.insert.AccountingInsertController">
+   <children>
+      <ChoiceBox fx:id="chooseTradePoint" layoutX="14.0" layoutY="50.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="chooseGood" layoutX="284.0" layoutY="50.0" prefWidth="150.0" />
+      <TextField fx:id="countField" layoutX="14.0" layoutY="135.0" prefHeight="31.0" prefWidth="203.0" promptText="Введите количество товара в торговой точке" />
+      <TextField fx:id="priceField" layoutX="247.0" layoutY="135.0" promptText="Введите цену за единицу" />
+      <Button fx:id="button" layoutX="157.0" layoutY="206.0" mnemonicParsing="false" text="Добавить запись" onAction="#buttonAction" />
+      <Label layoutX="18.0" layoutY="21.0" text="Выберите торговую точку" />
+      <Label layoutX="304.0" layoutY="21.0" text="Выберите товар" />
+   </children>
+</AnchorPane>

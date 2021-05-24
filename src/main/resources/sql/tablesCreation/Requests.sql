@@ -1,1 +1,1 @@
-CREATE TABLE Requests (id NUMBER(11) PRIMARY KEY, trade_point REFERENCES Trade_Points(id) NOT NULL, good REFERENCES Goods(id) NOT NULL, count NUMBER(11) NOT NULL, provider REFERENCES Providers(id), status NUMBER(1))
+CREATE TABLE Requests (id NUMBER(11) PRIMARY KEY, trade_point REFERENCES Trade_Points(id) NOT NULL, good REFERENCES Goods(id) NOT NULL, count NUMBER(11) NOT NULL, provider REFERENCES Providers(id), status NUMBER(1), user_id REFERENCES Users(id) NOT NULL)

@@ -14,6 +14,7 @@ public class Connection {
     private static final String login = "18209_khlimankova";
     private static final String password = "khlimankova";
     private static final String driver = "oracle.jdbc.driver.OracleDriver";
+    public String userId;
 
     public Connection() { }
 
@@ -48,10 +49,20 @@ public class Connection {
         ResultSet set = executeQueryAndGetResult("SELECT role from users where (username = '" + login
                 + "') and (password = '" + password + "')");
 
+        ResultSet set2 = executeQueryAndGetResult("SELECT id from users where (username = '" + login
+                + "') and (password = '" + password + "')");
+
         if (set != null) {
             while (set.next()) {
                 String name = set.getString(1);
                 role = Roles.getRoleByName(name);
+            }
+        }
+
+        if (set2 != null) {
+            while (set2.next()) {
+                String id = set2.getString(1);
+                userId = id;
             }
         }
 

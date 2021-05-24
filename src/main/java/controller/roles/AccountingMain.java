@@ -1,5 +1,6 @@
 package controller.roles;
 
+import controller.base.TableController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -8,6 +9,7 @@ import javafx.stage.Stage;
 import utils.Selections;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class AccountingMain {
     public Button button;
@@ -34,10 +36,33 @@ public class AccountingMain {
 
     /// Просмотр таблицы
     public void accounting() {
+        Stage stage = new Stage();
+        stage.setTitle("Accounting");
+
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = null;
+
+        try {
+            root = loader.load(getClass().getResourceAsStream("/windows/table_window.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        TableController tableController = loader.getController();
+        String parameter = "ACCOUNTING";
+        tableController.setParameter(parameter);
+        try {
+            tableController.loadData();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        assert root != null;
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
     private void showSelectWindow() {
-        Stage primaryStage = (Stage) button.getScene().getWindow();
+        Stage primaryStage = new Stage();
         FXMLLoader loader = new FXMLLoader();
 
         try {

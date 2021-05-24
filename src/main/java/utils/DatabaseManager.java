@@ -10,12 +10,13 @@ import java.util.stream.Stream;
 
 public class DatabaseManager {
     private static final String[] tableNamesArray = {"TradeTypes.sql", "Goods.sql", "TradePoints.sql", "TradeRoom.sql",
-            "Seller.sql", "Purchase_compositions.sql", "Customers.sql", "Sales.sql", "Providers.sql", "Accounting.sql",
-            "Deliveries.sql", "DeliveriesGoods.sql","TradeSectionPoint.sql", "Requests.sql", "Kioski.sql", "Lotki.sql",
-            "Shops.sql", "Univermags.sql", "Users.sql"};
+            "Seller.sql", "Purchase_compositions.sql", "Customers.sql", "Sales.sql", "Kioski.sql", "Lotki.sql",
+            "Shops.sql", "Univermags.sql", "Users.sql", "Providers.sql", "Accounting.sql",
+            "Deliveries.sql", "DeliveriesGoods.sql","TradeSectionPoint.sql", "Requests.sql"};
 
     private final Connection connection;
     private final List<String> tablesName;
+    private String userId;
 
     public DatabaseManager(Connection connection) {
         this.connection = connection;
@@ -56,6 +57,26 @@ public class DatabaseManager {
         System.out.println("INSERT trade point");
     }
 
+    public void insertAccounting(String point, String good, String count, String price) {
+        List<String> accounting = new LinkedList<>();
+        accounting.add("INSERT INTO Accounting(trade_point, good, count, price)" +
+                " VALUES(" + point + ", " + good + ", "+ count + ", " + price + ")");
+        connection.insert(accounting);
+        System.out.println("INSERT accounting");
+    }
+
+    public void insertRequest(String point, String good, String provider, String count, String status) {
+        List<String> accounting = new LinkedList<>();
+        String newProvider = provider.equals("") ? "null" : provider;
+        String newStatus = status.equals("") ? "false" : status;
+
+        accounting.add("INSERT INTO Requests(trade_point, good, provider, count, status, user_id)" +
+                " VALUES(" + point + ", " + good + ", "+ newProvider + ", " + count + ", " + newStatus + ", " + connection.userId + ")");
+        connection.insert(accounting);
+        System.out.println("INSERT accounting");
+    }
+
+
     public static String getIdFrom(String item) {
         return getSubstring(" ID=", "ID=", item);
     }
@@ -72,7 +93,28 @@ public class DatabaseManager {
             endIndex = item.indexOf('}', substringStartIndex);
         }
 
-        return item.substring(substringStartIndex + start.length(), endIndex);
+        String substring = item.substring(substringStartIndex + start.length(), endIndex);
+        return substring;
+    }
+
+    public void updateAccounting(String id, String point, String good, String count, String price) {
+        String sql = "update Accounting set trade_point = " + point + ", good = " +
+                good + ", count = " + count + ", price = " + price + " where id = " + id;
+        List<String> acc = new LinkedList<>();
+        acc.add(sql);
+        connection.insert(acc);
+        System.out.println("UPDATE accounting");
+    }
+
+    public void updateRequest(String id, String point, String good, String provider, String count, String status) {
+        String newProvider = provider.equals("") ? "null" : provider;
+        String newStatus = status.equals("") ? "false" : status;
+        String sql = "update Requests set trade_point = " + point + ", good = " +
+                good + ", provider = " + newProvider + ", count = " + count + ", status = " + newStatus + " where id = " + id;
+        List<String> req = new LinkedList<>();
+        req.add(sql);
+        connection.insert(req);
+        System.out.println("UPDATE requests");
     }
 
     public void updateGood(String id, String name) {
@@ -133,14 +175,8 @@ public class DatabaseManager {
         execute(getSequences());
         execute(getAutoincrement());
         insertDefault();
-        dropRoles();
-        createRoles();
-
-//        try {
-//            connection.executeQuery("CREATE ROLE admin");
-//        } catch (SQLException throwable) {
-//            throwable.printStackTrace();
-//        }
+      //  dropRoles();
+      //  createRoles();
     }
 
     private String getScriptFromFile(String relativePath) {

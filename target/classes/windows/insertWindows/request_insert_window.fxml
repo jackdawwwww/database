@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.insert.RequestInsertController">
+   <children>
+      <ChoiceBox fx:id="chooseTradePoint" layoutX="78.0" layoutY="81.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="chooseGood" layoutX="324.0" layoutY="81.0" prefWidth="150.0" />
+      <TextField fx:id="countField" layoutX="138.0" layoutY="154.0" prefHeight="31.0" prefWidth="248.0" promptText="Введите количество товара" />
+      <Button fx:id="button" layoutX="194.0" layoutY="325.0" mnemonicParsing="false" onAction="#buttonAction" text="Добавить запись" />
+      <Label layoutX="63.0" layoutY="40.0" text="Выберите торговую точку" />
+      <Label layoutX="344.0" layoutY="40.0" text="Выберите товар" />
+      <ChoiceBox fx:id="providerBox" layoutX="187.0" layoutY="257.0" prefWidth="150.0" />
+      <Label fx:id="provLabel" layoutX="224.0" layoutY="225.0" text="Поставщик" />
+      <CheckBox fx:id="checkBox" layoutX="372.0" layoutY="330.0" mnemonicParsing="false" text="Заказ обработан" />
+   </children>
+</AnchorPane>

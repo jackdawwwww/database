@@ -38,11 +38,16 @@ public class Enter2Controller {
         if (isNotEmpty()) {
             try {
                 Roles role = connection.signIn(loginText.getText(), passwordText.getText());
-                Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                if (role == null) {
+                    showAlert("Invalid user data", "Check your login and password");
+                    return;
+                }
+                Stage primaryStage = new Stage();
                 FXMLLoader loader = new FXMLLoader();
                 String windowName = role.getWindowName();
                 Parent root = loader.load(getClass().getResourceAsStream(windowName));
                 primaryStage.setScene(new Scene(root));
+                primaryStage.show();
             } catch (SQLException ex) {
                 System.out.println("SQLException: error with connection to server");
                 showAlert("Invalid user data", "Check your login and password");

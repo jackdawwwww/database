@@ -7,8 +7,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import utils.Connection;
@@ -27,7 +29,6 @@ public class MainTableController implements Initializable {
     private final DatabaseManager manager;
     public static final ObservableList data =
             FXCollections.observableArrayList();
-
     public MainTableController() {
         connection = Main.getConnection();
         manager = new DatabaseManager(connection);

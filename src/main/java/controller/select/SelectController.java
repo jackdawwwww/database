@@ -47,7 +47,7 @@ public interface SelectController {
                 stage.setScene(new Scene(root));
                 stage.show();
             } else {
-                showAlert("Пустой результат", "попробуйте поменять параметры");
+                showAlert("Пустой результат", "Нет данных с вашими параметрами");
             }
         } catch (Exception e) {
             e.printStackTrace();
