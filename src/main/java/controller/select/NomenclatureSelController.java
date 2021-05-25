@@ -38,7 +38,7 @@ public class NomenclatureSelController implements SelectController, Initializabl
             if (set != null) {
                 while (set.next()) {
                     String name = set.getString(3);
-                    Integer id = set.getInt(2);
+                    Integer id = set.getInt(1);
                     points.put(name, id);
                     items.add(name);
                 }

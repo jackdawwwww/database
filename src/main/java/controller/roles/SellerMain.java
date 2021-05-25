@@ -27,7 +27,7 @@ public class SellerMain {
     }
 
     private void showSelectWindow() {
-        Stage primaryStage = (Stage) button.getScene().getWindow();
+        Stage primaryStage = new Stage();
         FXMLLoader loader = new FXMLLoader();
 
         try {
@@ -36,5 +36,7 @@ public class SellerMain {
         } catch (IOException ignored) {
 
         }
+
+        primaryStage.show();
     }
 }

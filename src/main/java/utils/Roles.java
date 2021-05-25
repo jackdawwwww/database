@@ -18,13 +18,13 @@ public enum Roles {
             "/windows/roles/provider_main_window.fxml")),
     reqManager(new Role(
             "req_manager",
-            "/windows/roles/manager_main_window.fxml")),
-    seller(new Role(
-            "seller",
-            "/windows/roles/seller_main_window.fxml")),
-    sellerManager(new Role(
-            "seller_manager",
-            "/windows/roles/sellers_manager_main_window.fxml"));
+            "/windows/roles/manager_main_window.fxml"));
+//    seller(new Role(
+//            "seller",
+//            "/windows/roles/seller_main_window.fxml")),
+//    sellerManager(new Role(
+//            "seller_manager",
+//            "/windows/roles/sellers_manager_main_window.fxml"));
 
     private Role role;
 
@@ -55,9 +55,9 @@ public enum Roles {
         roles.put("Поставщик", Roles.provider);
         roles.put("Клиент", Roles.client);
         roles.put("Админ", Roles.admin);
-        roles.put("Продавец", Roles.seller);
+    //    roles.put("Продавец", Roles.seller);
         roles.put("Менеджер по поставкам", Roles.reqManager);
-        roles.put("Менеджер по персоналу", Roles.sellerManager);
+    //    roles.put("Менеджер по персоналу", Roles.sellerManager);
         return roles;
     }
 }

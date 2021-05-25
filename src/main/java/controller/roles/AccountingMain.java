@@ -21,17 +21,22 @@ public class AccountingMain {
         showSelectWindow();
     }
 
-    /// Данные об объеме продаж указанного товара за некоторый период
-    public void getSalesData() {
-
+    //Получить данные о выработке на одного продавца за указанный период по всем торговым точкам, по торговым точкам заданного типа.",
+    public void getSellersDataByParam() {
+        windowName = Selections.sellers.getWindowName();
+        showSelectWindow();
     }
 
-    /// Данные о рентабельности торговой точки
-    public void getRentable() {
+    /// Получить сведения об объеме и ценах на указанный товар по всем торговым точкам, по торговым точкам заданного типа, по конкретной торговой точке.
+    public void getSalesDataByParam() {
+        windowName = Selections.prices.getWindowName();
+        showSelectWindow();
     }
 
-    /// Данные о товарообороте
-    public void getData() {
+    /// Получить данные о заработной плате продавцов по всем торговым точкам, по торговым точкам заданного типа, по конкретной торговой точке
+    public void getSalaryDataByParam() {
+        windowName = Selections.salary.getWindowName();
+        showSelectWindow();
     }
 
     /// Просмотр таблицы
@@ -71,5 +76,7 @@ public class AccountingMain {
         } catch (IOException ignored) {
 
         }
+
+        primaryStage.show();
     }
 }

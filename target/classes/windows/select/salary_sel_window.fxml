@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.select.SalarySelController">
+    <children>
+        <Button fx:id="listButton" layoutX="231.0" layoutY="323.0" mnemonicParsing="false" onAction="#getButtonTapped" text="Получить данные" />
+        <ChoiceBox fx:id="choiceBox" layoutX="108.0" layoutY="194.0" prefWidth="150.0" />
+        <Label layoutX="85.0" layoutY="84.0" text="Вы можете выбрать тип торговой точки или конкреткую точку" />
+        <ChoiceBox fx:id="choosePoint" layoutX="351.0" layoutY="194.0" prefWidth="150.0" />
+        <Label layoutX="148.0" layoutY="139.0" text="Тип точки" />
+        <Label layoutX="372.0" layoutY="139.0" text="Торговая точка" />
+    </children>
+</AnchorPane>

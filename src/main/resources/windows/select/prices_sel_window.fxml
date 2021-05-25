@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.select.PricesSelController">
+    <children>
+        <Button fx:id="listButton" layoutX="233.0" layoutY="292.0" mnemonicParsing="false" onAction="#getButtonTapped" text="Получить данные" />
+        <ChoiceBox fx:id="choiceBox" layoutX="102.0" layoutY="220.0" prefWidth="150.0" />
+        <Label layoutX="104.0" layoutY="142.0" text="Вы можете выбрать тип торговой точки или конкреткую точку" />
+        <ChoiceBox fx:id="choosePoint" layoutX="357.0" layoutY="220.0" prefWidth="150.0" />
+        <Label layoutX="142.0" layoutY="185.0" text="Тип точки" />
+        <Label layoutX="379.0" layoutY="185.0" text="Торговая точка" />
+
+        <Label layoutX="279.0" layoutY="27.0" text="Товар" />
+        <ChoiceBox fx:id="chooseGood" layoutX="229.0" layoutY="55.0" prefWidth="150.0" />
+    </children>
+</AnchorPane>

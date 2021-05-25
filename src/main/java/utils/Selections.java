@@ -14,7 +14,16 @@ public enum Selections {
     sellers(new Select("" +
             "Получить данные о выработке на одного продавца за указанный период по всем\n" +
             "торговым точкам, по торговым точкам заданного типа.",
-            "/windows/select/sellers_sel_window.fxml"));
+            "/windows/select/sellers_sel_window.fxml")),
+
+    prices(new Select("Получить сведения об объеме и ценах на указанный товар по всем торговым точкам, по торговым точкам заданного типа, по конкретной торговой точке",
+            "/windows/select/prices_sel_window.fxml")),
+
+    salary(new Select("Получить данные о заработной плате продавцов по всем торговым точкам, по торговым точкам заданного типа, по конкретной торговой точке",
+            "/windows/select/salary_sel_window.fxml")),
+
+    clients(new Select("Получить сведения о покупателях указанного товара за обозначенный, либо за весь период, по всем торговым точкам, по торговым точкам указанного типа, по данной торговой точке",
+            "/windows/select/clients_sel_window.fxml"));
 
     private final Select select;
 

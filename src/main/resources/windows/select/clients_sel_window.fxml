@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.select.ClientsSelController">
+    <children>
+        <Button fx:id="listButton" layoutX="231.0" layoutY="323.0" mnemonicParsing="false" onAction="#getButtonTapped" text="Получить данные" />
+        <ChoiceBox fx:id="choiceBox" layoutX="107.0" layoutY="174.0" prefWidth="150.0" />
+        <Label layoutX="87.0" layoutY="109.0" text="Вы можете выбрать тип торговой точки или конкреткую точку" />
+        <DatePicker fx:id="startPicker" layoutX="95.0" layoutY="265.0" prefHeight="31.0" prefWidth="173.0" />
+        <DatePicker fx:id="endPicker" layoutX="338.0" layoutY="265.0" prefHeight="31.0" prefWidth="173.0" />
+        <Label layoutX="125.0" layoutY="221.0" text="Начало периода" />
+        <Label layoutX="363.0" layoutY="221.0" text="Конец периода" />
+      <ChoiceBox fx:id="choosePoint" layoutX="350.0" layoutY="174.0" prefWidth="150.0" />
+      <Label layoutX="148.0" layoutY="139.0" text="Тип точки" />
+      <Label layoutX="372.0" layoutY="139.0" text="Торговая точка" />
+      <Label layoutX="279.0" layoutY="27.0" text="Товар" />
+      <ChoiceBox fx:id="chooseGood" layoutX="229.0" layoutY="55.0" prefWidth="150.0" />
+    </children>
+</AnchorPane>

@@ -16,6 +16,6 @@
       <Label layoutX="344.0" layoutY="40.0" text="Выберите товар" />
       <ChoiceBox fx:id="providerBox" layoutX="187.0" layoutY="257.0" prefWidth="150.0" />
       <Label fx:id="provLabel" layoutX="224.0" layoutY="225.0" text="Поставщик" />
-      <CheckBox fx:id="checkBox" layoutX="372.0" layoutY="330.0" mnemonicParsing="false" text="Заказ обработан" />
+      <CheckBox fx:id="checkBox" layoutX="372.0" layoutY="330.0" mnemonicParsing="false" text="Заказ отправлен" />
    </children>
 </AnchorPane>

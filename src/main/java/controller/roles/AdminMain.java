@@ -41,7 +41,7 @@ public class AdminMain {
     }
 
     private void showSelectWindow(String name) {
-        Stage primaryStage = (Stage) button.getScene().getWindow();
+        Stage primaryStage = new Stage();
         FXMLLoader loader = new FXMLLoader();
 
         try {
@@ -50,6 +50,8 @@ public class AdminMain {
         } catch (IOException ignored) {
 
         }
+
+        primaryStage.show();
     }
 }
 

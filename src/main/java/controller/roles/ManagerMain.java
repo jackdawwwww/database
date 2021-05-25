@@ -1,5 +1,9 @@
 package controller.roles;
 
+import controller.base.TableController;
+import controller.insert.InsertMode;
+import controller.insert.RequestInsertController;
+import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,6 +13,7 @@ import javafx.stage.Stage;
 import utils.Selections;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class ManagerMain {
 
@@ -17,10 +22,52 @@ public class ManagerMain {
 
     /// Оформить заказ поставщику
     public void newReq() {
+        String windowName = "/windows/insertWindows/request_insert_window.fxml";
+        Stage stage = new Stage();
+
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = null;
+
+        try {
+            root = loader.load(getClass().getResourceAsStream(windowName));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        RequestInsertController controller = loader.getController();
+        controller.setCanChooseProvider(true);
+        controller.setCanChooseStatus(false);
+
+        assert root != null;
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
     /// Просмотреть заявки
     public void getReq() {
+        Stage stage = new Stage();
+        stage.setTitle("Заявки");
+
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = null;
+
+        try {
+            root = loader.load(getClass().getResourceAsStream("/windows/table_window.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        TableController tableController = loader.getController();
+        String parameter = "REQUESTS";
+        tableController.setParameter(parameter);
+        try {
+            tableController.loadData();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        assert root != null;
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
     /// Номенклатура товаров
@@ -35,31 +82,31 @@ public class ManagerMain {
         showSelectWindow();
     }
 
-    /// Покупатели, купившие указанный вид товара
-    public void getSelByParam() {
+    /// Получить данные о выработке на одного продавца за указанный период по всем торговым точкам, по торговым точкам заданного типа.",
+    public void getSellersDataByParam() {
+        windowName = Selections.sellers.getWindowName();
+        showSelectWindow();
     }
 
-    /// Данные об объеме продаж указанного товара
-    public void getDataByGood() {
+    /// Получить сведения о покупателях указанного товара за обозначенный, либо за весь период, по всем торговым точкам, по торговым точкам указанного типа, по данной торговой точке.
+    public void getClientsDataByParam() {
+        windowName = Selections.clients.getWindowName();
+        showSelectWindow();
     }
 
-    /// Сведения о поставках определенного товара указанным поставщиком
-    public void getDataByProv() {
-    }
-
-    /// Сведения о поставках товаров по указанному номеру заказа
-    public void getDataByReq() {
-    }
 
     private void showSelectWindow() {
-        Stage primaryStage = (Stage) button.getScene().getWindow();
+        Stage primaryStage = new Stage();
         FXMLLoader loader = new FXMLLoader();
 
         try {
             Parent root = loader.load(getClass().getResourceAsStream(windowName));
             primaryStage.setScene(new Scene(root));
+            primaryStage.show();
         } catch (IOException ignored) {
 
         }
+
+        primaryStage.show();
     }
 }
